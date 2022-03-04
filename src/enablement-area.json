@@ -13,7 +13,7 @@
         "id": "document",
         "label": "Document",
         "args": {
-          "initialIsOpen": true
+          "initialIsOpen": false
         },
         "children": {
           "introduction": {
@@ -46,6 +46,144 @@
             "label": "Learn More",
             "args": {
               "path": "/static/workbench/quick-guides/document/learn-more.md"
+            }
+          }
+        }
+        },
+      "Graph": {
+        "type": "group",
+        "id": "graph",
+        "label": "Graph",
+        "args": {
+          "withBorder": true,
+          "initialIsOpen": false
+        }
+      },
+      "Time-series": {
+        "type": "group",
+        "id": "Time-series",
+        "label": "Time Series",
+        "args": {
+          "withBorder": true,
+          "initialIsOpen": false
+          }
+        },
+        "vector-similarity-search": {
+          "type": "group",
+          "id": "vector-similarity-search",
+          "label": "Vector Similarity Search",
+          "args": {
+            "initialIsOpen": false
+          },
+          "children": {
+            "vss-introduction": {
+              "type": "internal-link",
+              "id": "vss-introduction",
+              "label": "Intro",
+              "args": {
+                "path": "/static/workbench/quick-guides/vector-similarity-search/vss-introduction.md"
+              }
+            },
+            "working-with-vectors": {
+              "type": "internal-link",
+              "id": "working-with-vectors",
+              "label": "Creating Vector Indexes",
+              "args": {
+                "path": "/static/workbench/quick-guides/vector-similarity-search/working-with-vectors.md"
+              }
+            },
+            "vss-load-vectors": {
+              "type": "internal-link",
+              "id": "vss-load-vectors",
+              "label": "Loading Vectors",
+              "args": {
+                "path": "/static/workbench/quick-guides/vector-similarity-search/vss-load-vectors.md"
+              }
+            },
+            "vss-query-vectors": {
+              "type": "internal-link",
+              "id": "vss-query-vectors",
+              "label": "Querying Vectors",
+              "args": {
+                "path": "/static/workbench/quick-guides/vector-similarity-search/vss-query-vectors.md"
+              }
+            },
+            "vss-learn-more": {
+              "type": "internal-link",
+              "id": "vss-learn-more",
+              "label": "Learn More",
+              "args": {
+                "path": "/static/workbench/quick-guides/vector-similarity-search/vss-learn-more.md"
+              }
+            }
+          }
+        },
+        "Probabilistic-data-structures": {
+          "type": "group",
+          "id": "Probabilistic-data-structures",
+          "label": "Probabilistic Data Structures",
+          "args": {
+            "withBorder": true,
+            "initialIsOpen": false
+          }
+        }
+    }
+  },
+  "tutorials": {
+    "type": "group",
+    "id": "tutorials",
+    "label": "TUTORIALS",
+    "args": {
+      "withBorder": true,
+      "initialIsOpen": true
+    },
+    "children": {
+      "redis_stack": {
+        "type": "group",
+        "id": "redis_stack",
+        "label": "Redis Stack",
+        "args": {
+          "initialIsOpen": false
+        },
+        "children": {
+          "working_with_json": {
+            "type": "internal-link",
+            "id": "working_with_json",
+            "label": "Working with JSON",
+            "args": {
+              "path": "/static/workbench/tutorials/redis_stack/working_with_json.md"
+            }
+          },
+          "vss": {
+            "type": "internal-link",
+            "id": "vss",
+            "label": "Vector Similarity Search",
+            "args": {
+              "path": "/static/workbench/tutorials/redis_stack/vss.md"
+            }
+          },
+          "timeseries": {
+            "type": "internal-link",
+            "id": "timeseries",
+            "label": "Redis for time series",
+            "args": {
+              "path": "/static/workbench/tutorials/redis_stack/timeseries.md"
+            }
+          },
+          "graph": {
+            "type": "internal-link",
+            "id": "graph",
+            "label": "Working with graphs",
+            "args": {
+              "path": "/static/workbench/tutorials/redis_stack/graph.md"
+            }
+          },
+          "bloom": {
+            "type": "internal-link",
+            "id": "bloom",
+            "label": "Probabilistic data structures",
+            "args": {
+              "path": "/static/workbench/tutorials/redis_stack/bloom.md"
             }
           }
         }
