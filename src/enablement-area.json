@@ -156,34 +156,34 @@
           },
           "vss": {
             "type": "internal-link",
-            "id": "vss",
+            "id": "vector_similarity_search",
             "label": "Vector Similarity Search",
             "args": {
-              "path": "/static/workbench/tutorials/redis_stack/vss.md"
+              "path": "/static/workbench/tutorials/redis_stack/vector_similarity_search.md"
             }
           },
           "timeseries": {
             "type": "internal-link",
-            "id": "timeseries",
+            "id": "redis_for_time_series",
             "label": "Redis for time series",
             "args": {
-              "path": "/static/workbench/tutorials/redis_stack/timeseries.md"
+              "path": "/static/workbench/tutorials/redis_stack/redis_for_time_series.md"
             }
           },
           "graph": {
             "type": "internal-link",
-            "id": "graph",
+            "id": "working_with_graphs",
             "label": "Working with graphs",
             "args": {
-              "path": "/static/workbench/tutorials/redis_stack/graph.md"
+              "path": "/static/workbench/tutorials/redis_stack/working_with_graphs.md"
             }
           },
           "bloom": {
             "type": "internal-link",
-            "id": "bloom",
+            "id": "probabilistic_data_structures",
             "label": "Probabilistic data structures",
             "args": {
-              "path": "/static/workbench/tutorials/redis_stack/bloom.md"
+              "path": "/static/workbench/tutorials/redis_stack/probabilistic_data_structures.md"
             }
           }
         }

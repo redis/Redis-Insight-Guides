@@ -1,9 +1,9 @@
-Among other things Redis Stack provides you with a native time series data structure. Let's see how a time series might
+Among other things, Redis Stack provides you with a native time series data structure. Let's see how a time series might
 be useful in our bike shop.
 
 As we have multiple physical shops too, alongside our online shop, it could be helpful to have an overview of the sales
 volume. We will create one time series per shop tracking the total amount of all sales. In addition, we will mark the
-time series with the appropriate region label, `east` of `west`. This kind of representation will allow us to easily
+time series with the appropriate region label, `east` or `west`. This kind of representation will allow us to easily
 query bike sales performance per certain time periods, per shop, per region or across all shops.
 
 ```redis Create time series per shop
@@ -14,7 +14,7 @@ TS.CREATE bike_sales_4 DUPLICATE_POLICY SUM LABELS region west compacted no
 TS.CREATE bike_sales_5 DUPLICATE_POLICY SUM LABELS region west compacted no
 ```
 
-In the above query we make the shop id (1,2,3,4,5) a part of the time series name. You might also notice
+In the above query, we make the shop id (1,2,3,4,5) a part of the time series name. You might also notice
 the `DUPLICATE_POLICY SUM` argument; this describes what should be done when two events in the same time series share
 the same timestamp: In this case, it would mean that two sales happened at exactly the same time, so the resulting value
 should be a sum of the two sales amounts.
@@ -727,14 +727,15 @@ TS.MRANGE - + FILTER region=(east,west) compacted=no GROUPBY region REDUCE sum
 TS.MRANGE - + AGGREGATION avg 86400000 FILTER region=(east,west) compacted=no GROUPBY region REDUCE sum
 ```
 
-Remember that compacted version of the timeseries we created in the beginning of this section? This last one is exactly the kind
+Remember that compacted version of the time series we created at the beginning of this section? This last one is exactly the kind
 of queries we might need it for. Instead of doing the aggregation on all the data points, we can simply run this query
 on the compacted time series:
 
 ```redis All sales per region, compacted
 TS.MRANGE - + FILTER region=(east,west) compacted=yes GROUPBY region REDUCE sum
 ```
-
 ```redis Show all total sales per day between a certain value in shop 5
+// Show all total sales per day between a certain value in shop 5
 TS.RANGE bike_sales_3_per_day - + FILTER_BY_VALUE 3000 5000
 ```
+
