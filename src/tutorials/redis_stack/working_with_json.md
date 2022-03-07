@@ -1,4 +1,4 @@
-In this tutorial we will go through an example of a bike shop. We will show the different capabilities of Redis Stack.
+In this tutorial, we will go through an example of a bike shop. We will show the different capabilities of Redis Stack.
 
 
 ## Storing and managing JSON
@@ -18,7 +18,7 @@ JSON.SET bikes:1 $ '{
     }' 
 ```
 
-You can use JSONPath to access any part of the stored JSON document:
+You can use [JSONPath](https://goessner.net/articles/JsonPath/) to access any part of the stored JSON document:
 
 ```redis Get specific fields
 JSON.GET bikes:1 $.model
@@ -135,7 +135,7 @@ JSON.SET bikes:99 $ '{"model": "Europa", "brand": "Eva", "price": 4621, "type": 
 ```
 
 ## Indexing and querying
-In addition to storing and managing JSON, Redis Stack provides the capability to index and query it. After we specify what we want indexed, the indexing happens automatically (and synchronously) when new data is saved.
+In addition to storing and managing JSON, Redis Stack provides the capability to index and query it. After we specify what we want to be indexed, the indexing happens automatically (and synchronously) when new data is saved.
 
 ```redis Create an index
 FT.CREATE idx:bikes
@@ -151,18 +151,20 @@ FT.CREATE idx:bikes
    $.description as description TEXT
 ```
 
-Now that we have our data indexed, it's really easy to run full-text searches on it and do filtering by number, tag and even geo position.
+Now that we have our data indexed, it's really easy to run full-text searches on it and filter by number, tag and even geo position.
 
 ```redis Query by type
 FT.SEARCH idx:bikes "@type:{eBikes}"
 ```
 
 ```redis Search by category and price
-FT.SEARCH idx:bikes "@type:{eBikes} @price:[200 1200]" RETURN 7 $.model $.type AS type $.price AS price 
+FT.SEARCH idx:bikes "@type:{eBikes} @price:[200 1200]" 
+    RETURN 9 $.model AS model $.type AS type $.price AS price 
 ```
 
 ```redis Even more search parameters
-FT.SEARCH idx:bikes "mudguards @type:{Road bikes} @price:[1000 3000]" RETURN 12 $.model AS model $.type AS type $.price AS price $.descrioption AS description
+FT.SEARCH idx:bikes "mudguards @type:{Mountain bikes} @price:[1000 3000]" 
+    RETURN 12 $.model AS model $.type AS type $.price AS price $.description AS description
 ```
 
 ### Aggregate search
@@ -177,7 +179,7 @@ FT.AGGREGATE idx:bikes "@price:[1000 3000]"
 FT.AGGREGATE idx:bikes "*" 
     GROUPBY 1 @type 
         REDUCE AVG 1 @weight AS average_bike_weight 
-    SORTBY 2 @type "ASC"
+    SORTBY 2 @average_bike_weight "DESC"
 ```
 
 ```redis Bikes per weight range

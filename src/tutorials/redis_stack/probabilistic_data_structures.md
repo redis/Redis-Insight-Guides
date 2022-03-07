@@ -1,4 +1,4 @@
-In very broad terms probabilistic data structures (PDS) allow us to get to a "close enough" result in much shorter time and by using significantly less memory.
+In very broad terms probabilistic data structures (PDS) allow us to get to a "close enough" result in a much shorter time and by using significantly less memory.
 
 Redis Stack supports 4 of the most famous PDS:
 - Bloom filters
