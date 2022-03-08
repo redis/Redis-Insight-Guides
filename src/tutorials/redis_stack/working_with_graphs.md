@@ -10,7 +10,8 @@ GRAPH.QUERY bikes_graph 'CREATE (b:Bike {
     Brand:"Velorim", 
     Model:"Jigger", 
     Price:"270", 
-    Type: "Kids\' bikes" })'
+    Type: "Kids\' bikes" })
+    RETURN b'
 ```
 
 ```redis Load more bikes
