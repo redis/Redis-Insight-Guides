@@ -37,11 +37,15 @@ GRAPH.QUERY bikes_graph 'CREATE (u:User { Name:"Mario"})'
 ```
 
 ## Adding relationships
+
 We model graph data very similarly to how we would describe it in a human language:
+
 - A user makes a transaction
 - That transaction contains a bike  
+
 We already have User and Bike nodes, we're only missing the Transactions, so let's create them.
-We also need to establish the relationships between all the nodes; we do that by matching the existing nodes, saving them in a variable (b, u, t) and using that variable to create the relationships
+
+We also need to establish the relationships between all the nodes; we do that by matching the existing nodes, saving them in a variable (b, u, t) and using that variable to create the relationships.
 
 ```redis Model bike sales
 GRAPH.QUERY bikes_graph '
@@ -52,6 +56,7 @@ GRAPH.QUERY bikes_graph '
 ```
 
 Let's load some more relationships:
+
 ```redis Load more bike sales
 GRAPH.QUERY bikes_graph 'MATCH (b:Bike { Model: "Hillcraft"}), (u:User {Name: "Alicia"}) CREATE (t:Transaction {Value: 1200 }) CREATE (u)-[r1:MADE]->(t) CREATE (t)-[r2:CONTAINS]->(b)'
 GRAPH.QUERY bikes_graph 'MATCH (b:Bike { Model: "ThrillCycle"}), (u:User {Name: "Andrea"}) CREATE (t:Transaction {Value: 815 }) CREATE (u)-[r1:MADE]->(t) CREATE (t)-[r2:CONTAINS]->(b)'
@@ -59,6 +64,7 @@ GRAPH.QUERY bikes_graph 'MATCH (b:Bike { Model: "XBN 2.1 Alloy"}), (u:User {Name
 ```
 
 Let's create a REVIEWED relationship between some users and bikes. The relationship will have a "Stars" property that will show the number of stars that the user assigned to the bike and a "ReviewID" property which will point us to the document that contains the review 
+
 ```redis Model users reviewing bikes
 GRAPH.QUERY bikes_graph '
     MATCH (u:User {Name: "Noah"}), 
@@ -70,7 +76,8 @@ GRAPH.QUERY bikes_graph 'MATCH (u:User {Name: "Mathew"}), (b:Bike { Model: "XBN 
 GRAPH.QUERY bikes_graph 'MATCH (u:User {Name: "Mario"}), (b:Bike { Model: "Hillcraft"}) CREATE (u)-[r:REVIEWED {ReviewID: 123, Stars: 3}]->(b)'
 ```
 
-Users of our bike shop will be able to follow each other so they can get updates on their recent updates
+Users of our bike shop will be able to follow each other so they can get updates on their recent updates.
+
 ```redis Users can follow each other
 GRAPH.QUERY bikes_graph 'MATCH (u1:User {Name: "Andrea"}), (u2:User {Name: "Noah"}) CREATE (u1)-[r:FOLLOWS]->(u2)'
 GRAPH.QUERY bikes_graph 'MATCH (u1:User {Name: "Andrea"}), (u2:User {Name: "Alicia"}) CREATE (u1)-[r:FOLLOWS]->(u2)'
@@ -80,7 +87,9 @@ GRAPH.QUERY bikes_graph 'MATCH (u1:User {Name: "Mario"}), (u2:User {Name: "Andre
 ```
 
 ## Utilising the graph for discovering how data is related
+
 When a user is viewing a page of a bike, we can increase the probability of a sale by showing the relationships that exist between the bike and the user, for example, someone our user follows might have bought the bike already, or might have reviewed it. 
+
 This is very easy to query with a graph database but very tricky with a relational database.
 
 ```redis Check user's connection with a bike
