@@ -21,7 +21,7 @@
             "id": "introduction",
             "label": "Introduction",
             "args": {
-              "path": "/quick-guides/document/introduction.md"
+              "path": "/guides/quick-guides/document/introduction.md"
             }
           },
           "working-with-hashes": {
@@ -29,7 +29,7 @@
             "id": "working-with-hashes",
             "label": "Working with Hashes",
             "args": {
-              "path": "/quick-guides/document/working-with-hashes.md"
+              "path": "/guides/quick-guides/document/working-with-hashes.md"
             }
           },
           "working-with-json": {
@@ -37,7 +37,7 @@
             "id": "working-with-json",
             "label": "Working with JSON",
             "args": {
-              "path": "/quick-guides/document/working-with-json.md"
+              "path": "/guides/quick-guides/document/working-with-json.md"
             }
           },
           "learn-more": {
@@ -45,7 +45,7 @@
             "id": "learn-more",
             "label": "Learn More",
             "args": {
-              "path": "/quick-guides/document/learn-more.md"
+              "path": "/guides/quick-guides/document/learn-more.md"
             }
           }
         }
@@ -57,7 +57,8 @@
     "id": "manual",
     "label": "Manual",
     "args": {
-      "path": "/_scripts/manual.txt"
+      "path": "/guides/_scripts/manual.txt",
+      "order": "last"
     }
   }
 }
