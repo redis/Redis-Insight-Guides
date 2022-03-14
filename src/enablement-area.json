@@ -49,6 +49,56 @@
             }
           }
         }
+      },
+      "vector-similarity-search": {
+        "type": "group",
+        "id": "vector-similarity-search",
+        "label": "Vector Similarity Search",
+        "args": {
+          "initialIsOpen": true
+        },
+        "children": {
+          "introduction": {
+            "type": "internal-link",
+            "id": "introduction",
+            "label": "Intro",
+            "args": {
+              "path": "/static/workbench/quick-guides/vector-similarity-search/introduction.md"
+            }
+          },
+          "create-vector-index": {
+            "type": "internal-link",
+            "id": "create-vector-index",
+            "label": "Creating Vector Indexes",
+            "args": {
+              "path": "/static/workbench/quick-guides/vector-similarity-search/create-vector-index.md"
+            }
+          },
+          "load-vectors": {
+            "type": "internal-link",
+            "id": "load-vectors",
+            "label": "Loading Vectors",
+            "args": {
+              "path": "/static/workbench/quick-guides/vector-similarity-search/load-vectors.md"
+            }
+          },
+          "query-vectors": {
+            "type": "internal-link",
+            "id": "query-vectors",
+            "label": "Querying Vectors",
+            "args": {
+              "path": "/static/workbench/quick-guides/vector-similarity-search/query-vectors.md"
+            }
+          },
+          "learn-more": {
+            "type": "internal-link",
+            "id": "learn-more",
+            "label": "Learn More",
+            "args": {
+              "path": "/static/workbench/quick-guides/vector-similarity-search/learn-more.md"
+            }
+          }
+        }
       }
     }
   },
