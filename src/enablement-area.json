@@ -50,7 +50,7 @@
           }
         }
       },
-      "Graph": {
+      "graph": {
         "type": "group",
         "id": "graph",
         "label": "Graph",
@@ -85,65 +85,115 @@
           }
         }
       },
-      "Time-series": {
+      "time-series": {
         "type": "group",
         "id": "Time-series",
         "label": "Time Series",
         "args": {
           "withBorder": true,
           "initialIsOpen": false
-          }
         },
-        "vector-similarity-search": {
-          "type": "group",
-          "id": "vector-similarity-search",
-          "label": "Vector Similarity Search",
-          "args": {
-            "initialIsOpen": false
+        "children": {
+          "introduction": {
+            "type": "internal-link",
+            "id": "introduction",
+            "label": "Introduction",
+            "args": {
+              "path": "/static/workbench/quick-guides/time-series/introduction.md"
+            }
           },
-          "children": {
-            "vss-introduction": {
-              "type": "internal-link",
-              "id": "vss-introduction",
-              "label": "Intro",
-              "args": {
-                "path": "/static/workbench/quick-guides/vector-similarity-search/vss-introduction.md"
-              }
-            },
-            "working-with-vectors": {
-              "type": "internal-link",
-              "id": "working-with-vectors",
-              "label": "Creating Vector Indexes",
-              "args": {
-                "path": "/static/workbench/quick-guides/vector-similarity-search/working-with-vectors.md"
-              }
-            },
-            "vss-load-vectors": {
-              "type": "internal-link",
-              "id": "vss-load-vectors",
-              "label": "Loading Vectors",
-              "args": {
-                "path": "/static/workbench/quick-guides/vector-similarity-search/vss-load-vectors.md"
-              }
-            },
-            "vss-query-vectors": {
-              "type": "internal-link",
-              "id": "vss-query-vectors",
-              "label": "Querying Vectors",
-              "args": {
-                "path": "/static/workbench/quick-guides/vector-similarity-search/vss-query-vectors.md"
-              }
-            },
-            "vss-learn-more": {
-              "type": "internal-link",
-              "id": "vss-learn-more",
-              "label": "Learn More",
-              "args": {
-                "path": "/static/workbench/quick-guides/vector-similarity-search/vss-learn-more.md"
-              }
+          "creating-a-time-series": {
+            "type": "internal-link",
+            "id": "creating-a-time-series",
+            "label": "Creating a Time Series",
+            "args": {
+              "path": "/static/workbench/quick-guides/time-series/creating-a-time-series.md"
+            }
+          },
+          "compactions": {
+            "type": "internal-link",
+            "id": "compactions",
+            "label": "Compactions",
+            "args": {
+              "path": "/static/workbench/quick-guides/time-series/compactions.md"
+            }
+          },
+          "filtering": {
+            "type": "internal-link",
+            "id": "filtering",
+            "label": "Filtering",
+            "args": {
+              "path": "/static/workbench/quick-guides/time-series/filtering.md"
+            }
+          },
+          "aggregation": {
+            "type": "internal-link",
+            "id": "aggregation",
+            "label": "Aggregation",
+            "args": {
+              "path": "/static/workbench/quick-guides/time-series/aggregation.md"
+            }
+          },
+          "learn-more": {
+            "type": "internal-link",
+            "id": "learn-more",
+            "label": "Learn more",
+            "args": {
+              "path": "/static/workbench/quick-guides/time-series/learn-more.md"
             }
           }
+        }
+      },
+      "vector-similarity-search": {
+        "type": "group",
+        "id": "vector-similarity-search",
+        "label": "Vector Similarity Search",
+        "args": {
+          "initialIsOpen": true
         },
+        "children": {
+          "introduction": {
+            "type": "internal-link",
+            "id": "introduction",
+            "label": "Intro",
+            "args": {
+              "path": "/static/workbench/quick-guides/vector-similarity-search/introduction.md"
+            }
+          },
+          "create-vector-index": {
+            "type": "internal-link",
+            "id": "create-vector-index",
+            "label": "Creating Vector Indexes",
+            "args": {
+              "path": "/static/workbench/quick-guides/vector-similarity-search/create-vector-index.md"
+            }
+          },
+          "load-vectors": {
+            "type": "internal-link",
+            "id": "load-vectors",
+            "label": "Loading Vectors",
+            "args": {
+              "path": "/static/workbench/quick-guides/vector-similarity-search/load-vectors.md"
+            }
+          },
+          "query-vectors": {
+            "type": "internal-link",
+            "id": "query-vectors",
+            "label": "Querying Vectors",
+            "args": {
+              "path": "/static/workbench/quick-guides/vector-similarity-search/query-vectors.md"
+            }
+          },
+          "learn-more": {
+            "type": "internal-link",
+            "id": "learn-more",
+            "label": "Learn More",
+            "args": {
+              "path": "/static/workbench/quick-guides/vector-similarity-search/learn-more.md"
+            }
+          }
+        }
+      },
         "Probabilistic-data-structures": {
           "type": "group",
           "id": "Probabilistic-data-structures",
@@ -151,8 +201,8 @@
           "args": {
             "withBorder": true,
             "initialIsOpen": false
-          }
         }
+      }
     }
   },
   "tutorials": {
