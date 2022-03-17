@@ -155,7 +155,7 @@
           "introduction": {
             "type": "internal-link",
             "id": "introduction",
-            "label": "Intro",
+            "label": "Introduction",
             "args": {
               "path": "/static/workbench/quick-guides/vector-similarity-search/introduction.md"
             }
@@ -194,13 +194,62 @@
           }
         }
       },
-        "Probabilistic-data-structures": {
-          "type": "group",
-          "id": "Probabilistic-data-structures",
-          "label": "Probabilistic Data Structures",
-          "args": {
-            "withBorder": true,
-            "initialIsOpen": false
+      "probabilistic-data-structures": {
+        "type": "group",
+        "id": "probabilistic-data-structures",
+        "label": "Probabilistic Data Structures",
+        "args": {
+          "initialIsOpen": false
+        },
+        "children": {
+          "introduction": {
+            "type": "internal-link",
+            "id": "introduction",
+            "label": "Introduction",
+            "args": {
+              "path": "/static/workbench/quick-guides/probabilistic-data-structures/introduction.md"
+            }
+          },
+          "bloom-filter": {
+            "type": "internal-link",
+            "id": "bloom-filter",
+            "label": "Bloom Filter",
+            "args": {
+              "path": "/static/workbench/quick-guides/probabilistic-data-structures/bloom-filter.md"
+            }
+          },
+          "cuckoo-filter": {
+            "type": "internal-link",
+            "id": "cuckoo-filter",
+            "label": "Cuckoo Filter",
+            "args": {
+              "path": "/static/workbench/quick-guides/probabilistic-data-structures/cuckoo-filter.md"
+            }
+          },
+          "count-min-sketch": {
+            "type": "internal-link",
+            "id": "count-min-sketch",
+            "label": "Count-Min Sketch",
+            "args": {
+              "path": "/static/workbench/quick-guides/probabilistic-data-structures/count-min-sketch.md"
+            }
+          },
+          "top-": {
+            "type": "internal-link",
+            "id": "top-k",
+            "label": "Top-K",
+            "args": {
+              "path": "/static/workbench/quick-guides/probabilistic-data-structures/top-k.md"
+            }
+          },
+          "learn-more": {
+            "type": "internal-link",
+            "id": "learn-more",
+            "label": "Learn More",
+            "args": {
+              "path": "/static/workbench/quick-guides/probabilistic-data-structures/learn-more.md"
+            }
+          }
         }
       }
     }
