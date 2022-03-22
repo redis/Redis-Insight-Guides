@@ -17,7 +17,7 @@ The last line of the query plan does a 'Node By Label Scan'.  This means that in
 
 Let's create an index on the 'name' property of all nodes with label 'Actor'.
 
-```redis Create index
+```redis Create index (RedisGraph 2.8 or later)
 GRAPH.QUERY movies "CREATE INDEX FOR (a:Actor) ON (a.name)"
 ```
 So we can inspect the execution plan after creating the index.
@@ -34,12 +34,12 @@ GRAPH.PROFILE movies "MATCH (a:Actor)-[r:ACTED_IN]-(m:Movie) WHERE a.name = 'Mar
 
 You can also create a full-text indices. Let's create a full-text index for the 'name' property of all nodes with label 'Actor'
 
-```redis Construct a full-text index
+```redis Construct a full-text index (RedisGraph 2.8 or later)
 GRAPH.QUERY movies "CALL db.idx.fulltext.createNodeIndex('Actor', 'name')"
 ```
 
 We will now use this index to match actors that their name contains a given word.
 
-```redis Match contained words using full-text index
+```redis Match contained words using full-text index (RedisGraph 2.8 or later)
 GRAPH.QUERY movies "CALL db.idx.fulltext.queryNodes('Actor', 'Mark') YIELD node RETURN node.name"
 ```
