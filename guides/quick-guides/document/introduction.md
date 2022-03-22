@@ -2,7 +2,7 @@ In Redis, you can model documents using:
 *   [Hashes](https://redis.io/topics/data-types#hashes)
 *   [JSON](https://oss.redis.com/redisjson/) (Redis Stack only)
 
-**Hashes** are a collection of flat field-value pairs and are a great choice for representing rows in a relational database table.
+**Hashes** are a collection of flat field-value pairs and a great choice for representing rows in a relational database table.
 
 **JSON** is best for representing documents in a document store, specially when there is a need to store nested objects and arrays. 
 
