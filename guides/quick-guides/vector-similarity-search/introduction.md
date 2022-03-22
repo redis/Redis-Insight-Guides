@@ -1,6 +1,6 @@
-**You can index and query vector data stored in Redis [Hashes](https://redis.io/topics/data-types#hashes)**  This capability extends RediSearch's abilities to index NUMERIC, GEO and TEXT data stored in hashes
+**You can index and query vector data stored in Redis [Hashes](https://redis.io/topics/data-types#hashes)**  This capability extends RediSearch's abilities to index NUMERIC, GEO and TEXT data stored in hashes.
 
-**The ability to index and query vector data is behind Vector Similarity Search (VSS).** VSS powers advanced search applications working on unstructured data There is a growing number of pre-trained Computer Vision and Natural Language processing models  that allows you to generate a vector representation of images or long pieces of text. 
+**The ability to index and query vector data is provided by Vector Similarity Search (VSS).** VSS powers advanced search applications working on unstructured data There is a growing number of pre-trained Computer Vision and Natural Language processing models  that allows you to generate a vector representation of images or long pieces of text.
 
 **Some of the most common applications built on top of VSS are:**
 * E-Commerce Visual Similarity: Recommending "visually similar" products within a price range or geo-location

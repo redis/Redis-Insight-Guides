@@ -10,9 +10,9 @@ TS.CREATE // Creates a new time series
     region east // Label with region = east
     
 ```
-We can get all the information and statistics about time series created.
+Use the `TS.INFO` command to get all the information and statistics about a time series.
 
-```redis Read
+```redis Get Time Series Information
 TS.INFO sensor1 // Returns information and statistics on sensor1
  
 TS.QUERYINDEX area_id=32 // Get all the time series matching with area_id=32
@@ -23,7 +23,7 @@ Let's delete a time series.
 ```redis Delete
 EXPIRE sensor1 120 // Sets expiration of the time series to 120 seconds
  
-DEL sensor1 // Deletes the entire time series
+DEL sensor1 // Deletes the entire time series immediately
 ```
 
 ### Manage data points
@@ -40,13 +40,13 @@ TS.MADD // Adds multiple data points to a time series
     sensor1 // Keyname for the first time series
     1626435637914 // Timestamp
     28 // Value
-    sensor1 // Keyname for the second time series, which can be a different one
+    sensor1 // Keyname for the second time series, which can be different
     * // Timestamp
     35 // Value
  
 TS.ADD 
     sensor1
-    * // Will use  the current timestamp
+    * // Will use the current timestamp
     50
 ```
 
@@ -58,9 +58,9 @@ TS.GET sensor1 // Gets the last sample in the time series
 TS.MGET FILTER area_id=32 // Returns the last sample from a time series with area_id=32
 ```
 
-You can also update existing time series.
+You can also update an existing time series using the `TS.ALTER` command.
 
-```redis Update
+```redis Update a Time Series
 TS.ALTER // Updates existing data points
     sensor1 // Keyname for the timerseries
     1626434637914 // Timestamp

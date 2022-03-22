@@ -1,7 +1,7 @@
-With the vector index already created, Let's load data for 5 different products
+With the vector index already created, Let's load data for 5 different products.
 
 
-Note that the product data will be indexed automatically as you HSET the product data!
+Note that the product data will be indexed automatically as you `HSET` the product data!
 
 ## Load 2 Visually Similar Products
 Two mobile phone covers.

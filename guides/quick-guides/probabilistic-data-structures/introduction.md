@@ -1,4 +1,4 @@
-Redis supports **probabilistic data structures** that give a very reasonable approximation of an answer in just a fraction of the usual time and using very little memory. 
+Redis supports **probabilistic data structures** that give a very reasonable approximation of an answer quickly and with significantly less memory overhead than their deterministic counterparts.
 The following data structures trade perfect accuracy for extreme memory efficiency, so they're especially useful for big data and streaming applications:
 * Bloom filter
 * Cuckoo filter
@@ -10,8 +10,8 @@ The following data structures trade perfect accuracy for extreme memory efficien
 * Uses multiple hash functions to create a representation of the element on a bit array
 * Answers the question "Is this element present in the set?"
 * A negative answer means that the element is not present in a set (accurate result)
-* A positive answer means that the element most likely present in the set (false positives is possible; the error rate is controllable).
-* The error rate can be defined on filter creation
+* A positive answer means that the element most likely present in the set (false positives are possible; the error rate is controllable).
+* The error rate can be configured when the filter is created
 
 **Cuckoo filter:**
 * Same purpose as Bloom filters, but also allow deletion of elements

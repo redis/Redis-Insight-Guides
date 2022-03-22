@@ -1,6 +1,6 @@
-With compactions, you could aggregate the data by every minute in order to compact data points and reduce the database size (for example, if you have collected more than one billion data points in a day).
+With compactions, you could aggregate the data into one minute buckets in order to compact data points and reduce the database size (for example, if you have collected more than one billion data points in a day).
 
-There is no data rewriting on the original time series - the compaction happens in a new series, while the original one stays the same.
+Data rewriting is not performed on the original time series - the compaction happens in a new series, while the original one stays the same.
 
 Let's firstly create a new time series to work with.
 
@@ -17,7 +17,7 @@ TS.CREATERULE // Creates a rule to group data points from sensor1
     sensor1_compacted // Destination key
     AGGREGATION avg 60000 // Group data points added to the sensor1 time series into buckets of 60 seconds (60000ms) and average them
 ```
-If no longer needed, you can just delete a compaction rule.
+Compaction rules can be deleted when no longer needed:
 
 ```redis Delete a compaction rule
 TS.DELETERULE

@@ -13,7 +13,7 @@ TS.RANGE sensor1 - + FILTER_BY_VALUE 25 30 // Returns all data points whose valu
 TS.MRANGE - +  FILTER_BY_VALUE 20 30 FILTER region=east // Filters on multiple series
 ```
 
-We also can filter the data out based on timestamps.
+We also can filter the data based on timestamps.
 
 ```redis Filtering by timestamp
 TS.RANGE sensor1 - + FILTER_BY_TS 1626434637914 1626435637914 // Retrieves the data points for specific timestamps on one or multiple time series

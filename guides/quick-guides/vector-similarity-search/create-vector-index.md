@@ -8,7 +8,7 @@ For each product, you are storing:
 **You can create 2 types of vector indexes:**
 
 ## Flat index: 
-Use this type of index for Exact Nearest Neighbor search. Best for accuracy.
+Use this type of index for Exact Nearest Neighbor search. This type of index is best for accuracy.
 ```redis Create Flat vector index
 FT.CREATE "idx1"  // Index name
     ON HASH                // Indicates the type of data to index
@@ -43,7 +43,7 @@ FT.CREATE "idx2"  // Index name
  ```
 
 ## NOTE on image embedding generation:
-The "vector representation" of an image, also known as an embedding", is a list of numbers that provide a representation of the image.
+The "vector representation" of an image, also known as an "embedding", is a list of numbers that provide a representation of the image.
 
 The embeddings are created in such as way that the similarity between two embeddings (two lists of numbers) can be broadly equated to similarity of the original raw images!
 

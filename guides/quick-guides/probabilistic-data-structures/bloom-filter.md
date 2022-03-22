@@ -1,14 +1,14 @@
-Bloom filters are used to determine, with a high degree of certainty, whether an element is a member of a set. They typically exhibit better performance and scalability when inserting items.
+Bloom filters are used to determine, with a high degree of certainty, whether an element is a member of a set.
 
-Let's create a bloom filter with desired probability for false positives.
-Also we can add capacity - the number of entries intended to be added to the filter. If your filter allows scaling, performance will begin to degrade after adding more items than this number.
+Let's create a bloom filter and configure an acceptable false positive rate for our use case.
+We can also specify an initial capacity - the size of the dataset that we expect to add to the filter. Bloom filters can be configured to expand when this capacity is reached - [see the `BF.RESERVE` documentation for details](https://oss.redis.com/redisbloom/Bloom_Commands/#bfreserve).
 
 ```redis Create Filter
-BF.RESERVE bloom 0.001 100 // new bloom filter as the “bloom” key with desired false positive rate of 0.1% (0.001) and 100 entries intended to be added to the filter
+BF.RESERVE bloom 0.001 100 // create new bloom filter at key “bloom” with a desired false positive rate of 0.1% (0.001) and anticipated data set size of 100 entries
 
 ```
 
-So let's add items to our new bloom filter
+So let's add items to our new bloom filter:
 
 ```redis Add Items
 BF.ADD bloom foo // adds the “foo” item
@@ -17,19 +17,19 @@ BF.MADD bloom bar baz // adds "bar" and "baz" items
 ```
 Now we can determine whether an item may exist in the bloom filter or not.
 
-```redis Check If May Exist
-BF.EXISTS bloom foo // “1” if the item may exist
-BF.EXISTS bloom foo1 // “0” if the item certainly does not exist
+```redis Check If an Item Exists
+BF.EXISTS bloom foo // returns “1”: the item may exist
+BF.EXISTS bloom foo1 // returns “0”: the item certainly does not exist
 BF.MEXISTS bloom bar baz // determines if one or more items exist in the filter or not
 
 ```
-You can find more information about your bloom filter
+You can get information about your bloom filter using the `BF.INFO` command:
 
 ```redis Information About The Filter
-BF.INFO bloom // returns information about the "bloom" filter
+BF.INFO bloom // returns information about the bloom filter at key "bloom"
 
 ```
-Also you can create a new filter if it does not exist and insert items to it
+Inserting items into a Bloom filter that doesn't exist yet will create the filter for you.
 
 ```redis Create And Add Items
 BF.INSERT bloomFilter ITEMS foo bar baz // creates the "bloomFilter" key and adds three items to it, if the filter does not already exist
