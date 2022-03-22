@@ -31,3 +31,15 @@ Alternively, you can also profile the query with `GRAPH.PROFILE`.  Note that in 
 ```redis Profile your query
 GRAPH.PROFILE movies "MATCH (a:Actor)-[r:ACTED_IN]-(m:Movie) WHERE a.name = 'Mark Hamill' RETURN a.name,m.title"
 ```
+
+You can also create a full-text indices. Let's create a full-text index for the 'name' property of all nodes with label 'Actor'
+
+```redis Construct a full-text index
+GRAPH.QUERY movies "CALL db.idx.fulltext.createNodeIndex('Actor', 'name')"
+```
+
+We will now use this index to match actors that their name contains a given word.
+
+```redis Match contained words using full-text index
+GRAPH.QUERY movies "CALL db.idx.fulltext.queryNodes('Actor', 'Mark') YIELD node RETURN node.name"
+```
