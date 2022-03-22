@@ -75,6 +75,14 @@
               "path": "/quick-guides/graph/working-with-graphs.md"
             }
           },
+          "indexing-and-optimising": {
+            "type": "internal-link",
+            "id": "indexing-and-optimising",
+            "label": "Indexing Graphs",
+            "args": {
+              "path": "/quick-guides/graph/indexing-and-optimising.md"
+            }
+          },
           "learn-more": {
             "type": "internal-link",
             "id": "learn-more",

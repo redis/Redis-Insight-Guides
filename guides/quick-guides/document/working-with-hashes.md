@@ -1,4 +1,4 @@
-1. CRUD operations
+### CRUD operations
 
     ```redis Create
     // Let's add three documents as Hashes.
@@ -38,7 +38,7 @@
 
     ```
 
-2. Secondary Index
+### Secondary Index
     ```redis Create hash index
     // Command to create an index on hash keys that are prefixed with "permit:"
     // Note that it is possible to index either every hash or every JSON document in the keyspace or configure indexing only for a subset of the same data type documents described by a prefix.
@@ -69,7 +69,7 @@
     FT.INFO "permits"
 
     ```
-3. Search and Querying Basics
+### Search and Querying Basics
     ```redis Exact text search
     // Perform a text search on all text fields: query for documents inside which the word 'veranda' occurs
     

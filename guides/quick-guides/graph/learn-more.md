@@ -11,7 +11,6 @@
 
 ### Tutorials
 * [RedisGraph tutorial](https://developer.redis.com/howtos/redisgraph/)
-* [More on Redis University](https://university.redis.com/)
 
 ### Videos
 - [A Practical Introduction to RedisGraph - RedisConf 2020](https://www.youtube.com/watch?v=aGHALjV6JGc)

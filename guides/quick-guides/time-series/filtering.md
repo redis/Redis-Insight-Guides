@@ -11,7 +11,6 @@ Let's see only the information that fits into a specific range of values.
 TS.RANGE sensor1 - + FILTER_BY_VALUE 25 30 // Returns all data points whose value sits between 25 and 30, inclusive.
  
 TS.MRANGE - +  FILTER_BY_VALUE 20 30 FILTER region=east // Filters on multiple series
-
 ```
 
 We also can filter the data out based on timestamps.

@@ -1,4 +1,4 @@
-It's possible to combine values of one or more time series by leveraging aggregation functions.
+It's possible to aggreate samples of one or more time series by leveraging aggregation functions.
 
 ```redis Calculate average
 TS.RANGE sensor1 - + + AGGREGATION avg 3600000 // Calculates the average temperature per hour in the sensor1 series

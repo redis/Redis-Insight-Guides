@@ -12,13 +12,11 @@
 ### Tutorials
 * [RedisBloom Tutorial](https://developer.redis.com/howtos/redisbloom)
 * [Using RedisBloom with .NET](https://developer.redis.com/howtos/redisbloom/with-dotnet/redisbloom-withdotnet)
-* [More on Redis University](https://university.redis.com/)
 
 ### Videos
 - [How to: Use Bloom Filters in Redis](https://www.youtube.com/watch?v=Z9_wrhdbSC4)
 - [Bloom Filters](https://www.youtube.com/watch?v=C27lZKhiKiA)
 - [Real Time Log Analytics Using Probabilistic Data Structures in Redis](https://www.youtube.com/watch?v=ord1F0azUcQ)
-
 
 ### Social
 - [RedisBloom on Discord](https://discord.com/channels/697882427875393627/741003759764635739)

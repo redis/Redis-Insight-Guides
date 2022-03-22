@@ -7,17 +7,14 @@
 - [Introducing RedisTimeSeries 1.0](https://redis.com/blog/redistimeseries-ga-making-4th-dimension-truly-immersive/)
 - [Create a Real-time Vehicle Tracking System with Redis](https://redis.com/blog/create-a-real-time-vehicle-tracking-system-with-redis/)
 
-
 ### Tutorials
 * [RedisTimeSeries tutorial](https://developer.redis.com/howtos/redistimeseries/)
-* [More on Redis University](https://university.redis.com/)
 
 ### Videos
 - [Intro to RedisTimeSeries](https://www.youtube.com/watch?v=rXynFOrrd-Q)
 - [Time Series Data in Real Time with Redis Time Series Module](https://www.youtube.com/watch?v=Y2VbxNOYzVE)
 - [Real-time querying and aggregating of time series data with RedisTimeSeries](https://www.youtube.com/watch?v=nkUZqxjs2rk)
 - [Leveraging Redis Enterprise with RedisTimeSeries](https://www.youtube.com/watch?v=mfahK1qHRhk)
-
 
 ### Social
 - [RedisTimeSeries on Discord](https://discord.com/channels/697882427875393627/732335369718071376)
