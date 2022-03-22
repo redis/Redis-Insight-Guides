@@ -4,7 +4,7 @@ With the vector index already created, Let's load data for 5 different products
 Note that the product data will be indexed automatically as you HSET the product data!
 
 ## Load 2 Visually Similar Products
-Two mobile phone covers
+Two mobile phone covers.
 
 ```redis Load Products 1-2
 HSET product:1                           // key for product 1

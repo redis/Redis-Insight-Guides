@@ -20,7 +20,8 @@
 
 
 ### Social
+- [RedisTimeSeries on Discord](https://discord.com/channels/697882427875393627/732335369718071376)
+- [RedisTimeSeries on GitHub](https://github.com/RedisTimeSeries/RedisTimeSeries)
 - [RedisTimeSeries at Redis Forum](https://forum.redis.com/c/modules/redistimeseries/62)
 - [RedisTimeSeries on Stack Overflow](https://stackoverflow.com/questions/tagged/redistimeseries)
-- [RedisTimeSeries on GitHub](https://github.com/RedisTimeSeries/RedisTimeSeries)
-- [RedisTimeSeries on Discord](https://discord.com/channels/697882427875393627/732335369718071376)
+

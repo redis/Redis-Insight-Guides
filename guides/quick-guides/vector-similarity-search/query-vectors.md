@@ -2,8 +2,8 @@ Now let's query based on Visual Similarity
 
 
 ## Exact Search for most similar products
-Let's use the first mobile phone as the query item and find the top 2 most visually similar products 
-**SPOILER ALERT:**  It's not the chair, patio light or the two-seater sofa
+Let's use the first mobile phone as the query item and find the top 2 most visually similar products.
+**SPOILER ALERT:**  It's not the chair, patio light or the two-seater sofa.
 
 ```redis Using FLAT index
 FT.SEARCH idx1 //FLAT index
@@ -29,7 +29,7 @@ FT.SEARCH idx2 // HNSW index
 ```
 
 ## Hybrid Query
-Now let's further filter the visual similarity queries to only match products with a price between 70 & 80
+Now let's further filter the visual similarity queries to only match products with a price between 70 & 80.
 ```redis Hybrid Query on FLAT Index
 FT.SEARCH idx1 //FLAT index
     "@price:[70 80]=>[KNN 2 @image_vector $query_vector]"  //Top 2 most similar products

@@ -21,6 +21,6 @@
 
 
 ### Social
-- [RedisBloom at Redis Forum](https://forum.redis.com/c/modules/redisbloom/57)
-- [RedisBloom on GitHub](https://github.com/RedisBloom/RedisBloom)
 - [RedisBloom on Discord](https://discord.com/channels/697882427875393627/741003759764635739)
+- [RedisBloom on GitHub](https://github.com/RedisBloom/RedisBloom)
+- [RedisBloom at Redis Forum](https://forum.redis.com/c/modules/redisbloom/57)

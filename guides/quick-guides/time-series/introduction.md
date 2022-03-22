@@ -21,8 +21,8 @@ A shard may contain multiple time series.
 ### PRE-REQUISITES
 **You will need:**
 
-[Redis Stack Server](https://redis.io/download/#redis-downloads) >=6.2.0-v0 \
+[Redis Stack Server](https://redis.io/download) >=6.2.0-v0 \
 OR \
 [RedisTimeSeries](https://oss.redis.com/redistimeseries/) >=1.0 \
 OR \
-A (free and ready to use) instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_doc_guide).
+A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_doc_guide).

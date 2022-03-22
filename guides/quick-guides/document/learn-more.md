@@ -18,7 +18,7 @@
 * [Amazing User Experiences with Redis and RediSearch](https://www.youtube.com/watch?v=B_BVmJ90X8Q)
 
 ### Social
+- [RediSearch on Discord](https://discord.com/channels/697882427875393627/732335216068132995)
+- [RediSearch on GitHub](https://github.com/RediSearch/RediSearch)
 - [RediSearch at Redis Forum](https://forum.redis.com/c/modules/redisearch/58)
 - [RediSearch on Stack Overflow](https://stackoverflow.com/questions/tagged/redisearch)
-- [RediSearch on GitHub](https://github.com/RediSearch/RediSearch)
-- [RediSearch on Discord](https://discord.com/channels/697882427875393627/732335216068132995)

@@ -22,7 +22,7 @@
 - [RedisGraph 2.2: The Fastest Way to Query Your Highly Connected Data in Redis - RedisConf 2020](https://www.youtube.com/watch?v=JNpHba2kRGM)
 
 ### Social
+- [RedisGraph on Discord](https://discord.com/channels/697882427875393627/733400315465826400)
+- [RedisGraph on GitHub](https://github.com/RedisGraph/RedisGraph)
 - [RedisGraph at Redis Forum](https://forum.redis.com/c/modules/redisgraph/60)
 - [RedisGraph on Stack Overflow](https://stackoverflow.com/questions/tagged/redisgraph)
-- [RedisGraph on GitHub](https://github.com/RedisGraph/RedisGraph)
-- [RedisGraph on Discord](https://discord.com/channels/697882427875393627/733400315465826400)
