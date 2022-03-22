@@ -1,17 +1,14 @@
 In Redis, you can model documents using:
 *   [Hashes](https://redis.io/topics/data-types#hashes)
-*   [JSON](https://oss.redis.com/redisjson/)
+*   [JSON](https://oss.redis.com/redisjson/) (Redis Stack only)
 
-Hashes:
-*   Best for representing rows in a relational database table
-*   Schemaless collections of flat field-value pairs
-*   Support CRUD operation on field-value pairs at any time, not just initial declaration
+**Hashes** are a collection of flat field-value pairs and are a great choice for representing rows in a relational database table.
 
-JSON:
-*   Best for representing documents in a document store
-*   Full support of the JSON format with nested objects and nested arrays
-*   Supports [JSONPath](http://goessner.net/articles/JsonPath/) -like syntax for selecting elements inside
-*   Supports atomic CRUD operations
+**JSON** is best for representing documents in a document store, specially when there is a need to store nested objects and arrays. 
+
+Redis Hashes and JSON are being used to model documents across various industries, from real-time inventory management in retail, through fraud detection in financial services, matching drivers with riders in digital mobility, all the way to endpoint protection in cybersecurity.
+
+In the rest of this guide we'll show how you can automatically index your data, filter by properties, numeric ranges and geographical distance, as well as run full text search and complex aggregations. 
 
 ### PRE-REQUISITES
 **You will need:**
@@ -21,3 +18,8 @@ OR \
 [RediSearch](https://oss.redis.com/redisearch/) >=2.0 and [RedisJSON](https://oss.redis.com/redisjson/) >=2.0 \
 OR \
 A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_doc_guide).
+
+
+
+
+
