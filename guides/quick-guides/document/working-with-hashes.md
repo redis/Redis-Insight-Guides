@@ -26,7 +26,7 @@ HSET school:2 "name" "Garden School" "description" "Garden School is a new and i
 
 HSET school:3 "name" "Gillford School" "description" "Gillford School is an inclusive learning centre welcoming people from all walks of life, here invited to step into their role as regenerative agents, creating new pathways into the future and inciting an international movement of cultural, land, and social transformation." "class" "private" "type" "democratic; waldorf" "address_city" "Goudhurst" "address_street" "Goudhurst" "students" 721 "location" "51.112685, 0.451076"
 
-HSET school:4 "name" "Forest School" "description" "The philosophy behind Forest School is based upon the desire to provide young children with an education which encourages appreciation of the wide world in nature, while achieving independence, confidence and high self-esteem. " "class" "independent" "type" "forest; montessori; democratic" "address_city" "Oxford" "address_street" "Trident Street" "students" 1200 "location" "51.781756, -1.123196"
+HSET school:4 "name" "Forest School" "description" "The philosophy behind Forest School is based upon the desire to provide young children with an education that encourages appreciation of the wide world in nature while achieving independence, confidence and high self-esteem. " "class" "independent" "type" "forest; montessori; democratic" "address_city" "Oxford" "address_street" "Trident Street" "students" 1200 "location" "51.781756, -1.123196"
 
 ```
 
@@ -36,7 +36,7 @@ To read what we just wrote we can use the `HGETALL` command (to get the whole do
 // Read the whole document
 HGETALL school:1
 
-// Read only the field description
+// Read the field description only
 HGET school:1 description
 
 ```
@@ -72,7 +72,7 @@ HGETALL school:1
 ```
 
 ### Indexing your data
-The Redis keyspace is unstructured and flat; by default you can only access data by its primary key (keyname) making it very difficult to find a document based on a secondary characteristic, for example finding a school by name, or listing all schools in a particular city. Redis Stack addresses this need by providing a possibility to index and query your data. 
+The Redis keyspace is unstructured and flat; by default, you can only access data by its primary key (keyname) making it very difficult to find a document based on a secondary characteristic, for example finding a school by name or listing all schools in a particular city. Redis Stack addresses this need by providing a possibility to index and query your data. 
 
 Let's take a look at a very simple example:
 
@@ -90,7 +90,7 @@ FT.CREATE idx:schools
 In the query above we specify that we want to create an index named `idx:schools` that will index all keys of type `HASH` with a prefix of `school:`. The engine will index the fields `name`, `students` and `city`, making it possible to search on them. After we create the index, the indexing will happen automatically and synchronously every time we create or modify a hash with the specified prefix, but also the engine will retroactively index all existing documents in the database that match the specified criteria.
 
 Let's expand this simple example to our use case.
-```redis Create hash index
+```redis Create a hash index
 // Command to create an index on hash keys that are prefixed with "school:"
 // Note that it is possible to index either every hash or every JSON document in the keyspace or configure indexing only for a subset of the same data type documents described by a prefix.
 
@@ -103,7 +103,7 @@ FT.CREATE idx:schools           // Index name
     class TAG // Will be indexed as a TAG field. Will allow exact-match queries.
     type TAG SEPARATOR ";"    // For tag fields, a separator indicates how the text contained in the field is to be split into individual tags
     address_city AS city TAG
-    address_street AS address TEXT NOSTEM    // 'address_street' field will be indexed as TEXT, without stemming and can be referred as 'street' due to the '... AS fieldname ...' construct.
+    address_street AS address TEXT NOSTEM    // 'address_street' field will be indexed as TEXT, without stemming and can be referred to as 'street' due to the '... AS fieldname ...' construct.
     students NUMERIC SORTABLE   // Will be indexed as a numeric field. Will permit sorting during query
     location GEO     // Will be indexed as GEO. Will allow geographic range queries
 ```
@@ -120,7 +120,7 @@ FT.INFO "idx:schools"
 
 ```
 ### Search and Querying Basics
-Now that we instructed Redis Stack how we want our data indexed we can run different kinds of queries. Let's look at some examples:
+Now that we instructed Redis Stack on how we want our data indexed we can run different kinds of queries. Let's look at some examples:
 
 #### Text search
 ```redis Exact text search
@@ -134,7 +134,7 @@ FT.SEARCH idx:schools "nature"
 FT.SEARCH idx:schools "nature" RETURN 2 name description
 ```
 
-With Fuzzy search we can search for words that are similar to the one we're querying for. The number of `%` indicates the allowed Levenshtein distance (number of different characters). So the query would "culture" would match on "cultural" too, because "culture" and "cultural" have a distance of two.
+With Fuzzy search, we can search for words that are similar to the one we're querying for. The number of `%` indicates the allowed Levenshtein distance (number of different characters). So the query would "culture" would match on "cultural" too, because "culture" and "cultural" have a distance of two.
 ```redis Fuzzy text search
 // Perform a Fuzzy text search on all text fields: query for documents with words similar to 'culture' with a Levenshtein distance of 2. 
 
@@ -142,8 +142,8 @@ FT.SEARCH idx:schools "%%culture%%" RETURN 2 name description
 ```
 
 You can search on specific fields too:
-```redis Field specific text search
-// Perform a text search on a specific field: query for documents which have the word "innovative" in the description
+```redis Field-specific text search
+// Perform a text search on a specific field: query for documents that have the word "innovative" in the description
 
 FT.SEARCH idx:schools "@description:innovative"
 
@@ -162,9 +162,9 @@ FT.SEARCH idx:schools "@students:[500,1000]"
 
 
 ```redis Tag search
-// Perform a tag search: query for documents which have the address_city field set to "Lisbon". 
-// Note that we use curly braces around the tag. Also note that even though the field is called address_city in the hash, we can query it as city. 
-// That's because in the schema definition we used the ... AS fieldname ... construct, which allowed us to index address_city as city.
+// Perform a tag search: query for documents that have the address_city field set to "Lisbon". 
+// Note that we use curly braces around the tag. Also note that even though the field is called address_city in the hash, we can query it as "city". 
+// That's because in the schema definition we used the ... AS fieldname ... construct, which allowed us to index "address_city" as "city".
 
 FT.SEARCH idx:schools "@city:{London}"
 ```
@@ -186,16 +186,16 @@ FT.SEARCH idx:schools "@type:{forest} @type:{montessori}"
 
 ```
 ```redis Combined search on two fields (AND)
-// Perform a combined search on two fields (AND): query for intersection of both search terms.
+// Perform a combined search on two fields (AND): query for the intersection of both search terms.
 FT.SEARCH idx:schools "@type:{forest} @description:independence"
 
 ```
 ```redis Combined search on two fields (OR)
-// Perform a combined search on two fields (OR): query for union of both search terms. The brackets are important.
+// Perform a combined search on two fields (OR): query for the union of both search terms. The brackets are important.
 FT.SEARCH idx:schools "(@city:{London})|(@description:nature)"
 
 ```
-```redis Combined search and geo filter
+```redis Combined search and geo-filter
 // Perform a fuzzy text search and filter on location in a radius distance of 30km
 
 FT.SEARCH idx:schools "%%nature%% @location:[51.3 0.32 30 km]"
@@ -205,7 +205,7 @@ FT.SEARCH idx:schools "%%nature%% @location:[51.3 0.32 30 km]"
 #### Aggregations
 Aggregations are a way to process the results of a search query, group, sort and transform them - and extract analytic insights from them. Much like aggregation queries in other databases and search engines, they can be used to create analytics reports, or perform Faceted Search style queries. 
 
-For example, we can group schools by city and count schools per each group, giving us the number of schools per city. Or we could group by school class (independent/state) and see the average number of students per group.
+For example, we can group schools by city and count schools per group, giving us the number of schools per city. Or we could group by school class (independent/state) and see the average number of students per group.
 ```redis Group by & sort by aggregation: COUNT
 // Perform a Group By & Sort By aggregation of your documents: display the number of schools per city and sort by count
 
@@ -216,14 +216,14 @@ FT.AGGREGATE idx:schools "*"
 ```
 
 ```redis Group by & sort by aggregation: AVG
-// Group by school class and show average number of students per class.
+// Group by school class and show the average number of students per class.
 FT.AGGREGATE idx:schools "*"
     GROUPBY 1 @class REDUCE AVG 1 students AS students_avg
     SORTBY 2 @students_avg Asc
 ```
 
-`APPLY` performs a 1-to-1 transformation on one or more properties in each record. It either stores the result as a new property down the pipeline, or replaces any property using this transformation. 
-```redis Aggregation with transformation of properties
+`APPLY` performs a 1-to-1 transformation on one or more properties in each record. It either stores the result as a new property down the pipeline or replaces any property using this transformation. 
+```redis Aggregation with the transformation of properties
 // Perform an aggregation of your documents with an apply function: list all schools and their distance from a specific location
 // Note that you need to enclose the APPLY function within double quotes
 
