@@ -78,7 +78,7 @@
           "indexing-and-optimising": {
             "type": "internal-link",
             "id": "indexing-and-optimising",
-            "label": "Indexing Graphs",
+            "label": "Indexing and Optimising",
             "args": {
               "path": "/quick-guides/graph/indexing-and-optimising.md"
             }
@@ -168,28 +168,28 @@
               "path": "/quick-guides/vector-similarity-search/introduction.md"
             }
           },
-          "create-vector-index": {
+          "creating-vector-indexes": {
             "type": "internal-link",
-            "id": "create-vector-index",
+            "id": "creating-vector-indexes",
             "label": "Creating Vector Indexes",
             "args": {
-              "path": "/quick-guides/vector-similarity-search/create-vector-index.md"
+              "path": "/quick-guides/vector-similarity-search/creating-vector-indexes.md"
             }
           },
-          "load-vectors": {
+          "loading-vectors": {
             "type": "internal-link",
-            "id": "load-vectors",
+            "id": "loading-vectors",
             "label": "Loading Vectors",
             "args": {
-              "path": "/quick-guides/vector-similarity-search/load-vectors.md"
+              "path": "/quick-guides/vector-similarity-search/loading-vectors.md"
             }
           },
-          "query-vectors": {
+          "querying-vectors": {
             "type": "internal-link",
-            "id": "query-vectors",
+            "id": "querying-vectors",
             "label": "Querying Vectors",
             "args": {
-              "path": "/quick-guides/vector-similarity-search/query-vectors.md"
+              "path": "/quick-guides/vector-similarity-search/querying-vectors.md"
             }
           },
           "learn-more": {
