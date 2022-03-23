@@ -13,7 +13,7 @@
         "id": "document",
         "label": "Document",
         "args": {
-          "initialIsOpen": true
+          "initialIsOpen": false
         },
         "children": {
           "introduction": {
@@ -46,6 +46,216 @@
             "label": "Learn More",
             "args": {
               "path": "/quick-guides/document/learn-more.md"
+            }
+          }
+        }
+      },
+      "graph": {
+        "type": "group",
+        "id": "graph",
+        "label": "Graph",
+        "args": {
+          "withBorder": true,
+          "initialIsOpen": false
+        },
+        "children": {
+          "introduction": {
+            "type": "internal-link",
+            "id": "introduction",
+            "label": "Introduction",
+            "args": {
+              "path": "/quick-guides/graph/introduction.md"
+            }
+          },
+          "working-with-graphs": {
+            "type": "internal-link",
+            "id": "working-with-graphs",
+            "label": "Working with Graphs",
+            "args": {
+              "path": "/quick-guides/graph/working-with-graphs.md"
+            }
+          },
+          "indexing-and-optimising": {
+            "type": "internal-link",
+            "id": "indexing-and-optimising",
+            "label": "Indexing and Optimising",
+            "args": {
+              "path": "/quick-guides/graph/indexing-and-optimising.md"
+            }
+          },
+          "learn-more": {
+            "type": "internal-link",
+            "id": "learn-more",
+            "label": "Learn More",
+            "args": {
+              "path": "/quick-guides/graph/learn-more.md"
+            }
+          }
+        }
+      },
+      "time-series": {
+        "type": "group",
+        "id": "time-series",
+        "label": "Time Series",
+        "args": {
+          "withBorder": true,
+          "initialIsOpen": false
+        },
+        "children": {
+          "introduction": {
+            "type": "internal-link",
+            "id": "introduction",
+            "label": "Introduction",
+            "args": {
+              "path": "/quick-guides/time-series/introduction.md"
+            }
+          },
+          "creating-a-time-series": {
+            "type": "internal-link",
+            "id": "creating-a-time-series",
+            "label": "Creating a Time Series",
+            "args": {
+              "path": "/quick-guides/time-series/creating-a-time-series.md"
+            }
+          },
+          "compactions": {
+            "type": "internal-link",
+            "id": "compactions",
+            "label": "Compactions",
+            "args": {
+              "path": "/quick-guides/time-series/compactions.md"
+            }
+          },
+          "filtering": {
+            "type": "internal-link",
+            "id": "filtering",
+            "label": "Filtering",
+            "args": {
+              "path": "/quick-guides/time-series/filtering.md"
+            }
+          },
+          "aggregation": {
+            "type": "internal-link",
+            "id": "aggregation",
+            "label": "Aggregation",
+            "args": {
+              "path": "/quick-guides/time-series/aggregation.md"
+            }
+          },
+          "learn-more": {
+            "type": "internal-link",
+            "id": "learn-more",
+            "label": "Learn more",
+            "args": {
+              "path": "/quick-guides/time-series/learn-more.md"
+            }
+          }
+        }
+      },
+      "vector-similarity-search": {
+        "type": "group",
+        "id": "vector-similarity-search",
+        "label": "Vector Similarity Search",
+        "args": {
+          "initialIsOpen": false
+        },
+        "children": {
+          "introduction": {
+            "type": "internal-link",
+            "id": "introduction",
+            "label": "Introduction",
+            "args": {
+              "path": "/quick-guides/vector-similarity-search/introduction.md"
+            }
+          },
+          "creating-vector-indexes": {
+            "type": "internal-link",
+            "id": "creating-vector-indexes",
+            "label": "Creating Vector Indexes",
+            "args": {
+              "path": "/quick-guides/vector-similarity-search/creating-vector-indexes.md"
+            }
+          },
+          "loading-vectors": {
+            "type": "internal-link",
+            "id": "loading-vectors",
+            "label": "Loading Vectors",
+            "args": {
+              "path": "/quick-guides/vector-similarity-search/loading-vectors.md"
+            }
+          },
+          "querying-vectors": {
+            "type": "internal-link",
+            "id": "querying-vectors",
+            "label": "Querying Vectors",
+            "args": {
+              "path": "/quick-guides/vector-similarity-search/querying-vectors.md"
+            }
+          },
+          "learn-more": {
+            "type": "internal-link",
+            "id": "learn-more",
+            "label": "Learn More",
+            "args": {
+              "path": "/quick-guides/vector-similarity-search/learn-more.md"
+            }
+          }
+        }
+      },
+      "probabilistic-data-structures": {
+        "type": "group",
+        "id": "probabilistic-data-structures",
+        "label": "Probabilistic Data Structures",
+        "args": {
+          "initialIsOpen": false
+        },
+        "children": {
+          "introduction": {
+            "type": "internal-link",
+            "id": "introduction",
+            "label": "Introduction",
+            "args": {
+              "path": "/quick-guides/probabilistic-data-structures/introduction.md"
+            }
+          },
+          "bloom-filter": {
+            "type": "internal-link",
+            "id": "bloom-filter",
+            "label": "Bloom Filter",
+            "args": {
+              "path": "/quick-guides/probabilistic-data-structures/bloom-filter.md"
+            }
+          },
+          "cuckoo-filter": {
+            "type": "internal-link",
+            "id": "cuckoo-filter",
+            "label": "Cuckoo Filter",
+            "args": {
+              "path": "/quick-guides/probabilistic-data-structures/cuckoo-filter.md"
+            }
+          },
+          "count-min-sketch": {
+            "type": "internal-link",
+            "id": "count-min-sketch",
+            "label": "Count-Min Sketch",
+            "args": {
+              "path": "/quick-guides/probabilistic-data-structures/count-min-sketch.md"
+            }
+          },
+          "top-k": {
+            "type": "internal-link",
+            "id": "top-k",
+            "label": "Top-K",
+            "args": {
+              "path": "/quick-guides/probabilistic-data-structures/top-k.md"
+            }
+          },
+          "learn-more": {
+            "type": "internal-link",
+            "id": "learn-more",
+            "label": "Learn More",
+            "args": {
+              "path": "/quick-guides/probabilistic-data-structures/learn-more.md"
             }
           }
         }
