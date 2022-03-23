@@ -131,7 +131,7 @@
             "id": "filtering",
             "label": "Filtering",
             "args": {
-              "path": "quick-guides/time-series/filtering.md"
+              "path": "/quick-guides/time-series/filtering.md"
             }
           },
           "aggregation": {
@@ -260,14 +260,6 @@
           }
         }
       }
-    }
-  },
-  "manual": {
-    "type": "code-button",
-    "id": "manual",
-    "label": "Manual",
-    "args": {
-      "path": "/_scripts/manual.txt"
     }
   }
 }
