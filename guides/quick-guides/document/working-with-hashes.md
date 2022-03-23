@@ -1,6 +1,6 @@
-### CRUD operations
+### CRUD Operations
 
-Reading and managing hashes is done through the `HGET` and `HSET` commands. Let's look at a few examples of working with a document that represents a product with the following structure:
+Reading and managing hashes is done through the `HSET` and `HGET` commands. Let's look at a few examples of working with a document that represents a product with the following structure:
 
 ```
 school:1
@@ -30,17 +30,18 @@ HSET school:4 "name" "Forest School" "description" "The philosophy behind Forest
 
 ```
 
+<br>
+
 
 To read what we just wrote we can use the `HGETALL` command (to get the whole document), or we can get a single element by using the `HGET` command:
 ```redis Read
-// Read the whole document
-HGETALL school:1
+HGETALL school:1 // Read the whole document
 
-// Read the field description only
-HGET school:1 description
+HGET school:1 description // Read the field description only
 
 ```
 
+<br>
 
 Updating documents is also possible on a single element level, or if needed, you can replace the whole document atomically, in a single command:
 ```redis Update
@@ -52,24 +53,24 @@ HGET school:1 students // Read the students field after the update
 
 ```
 
+<br>
+
 The command `HDEL` will delete a single element from a document. To delete a whole document we use the standard key deletion command in Redis - `DEL`. If you need to delete more than a few documents though, please use the asynchronous version `UNLINK`
 ```redis Delete an element
-// Read the name field before deletion
-HGET school:1  name
+HGET school:1  name // Read the name field before deletion
 
-// Delete only the name field from the document
-HDEL school:1  name 
+HDEL school:1  name // Delete only the name field from the document
 
-// Read the whole document to confirm the name field has been deleted
-HGETALL school:1
+HGETALL school:1 // Read the whole document to confirm the name field has been deleted
 ```
 
 ```redis Delete a document
-// Delete the entire document
-DEL school:1
-// Confirm the entire document has been deleted
-HGETALL school:1
+DEL school:1 // Delete the entire document
+
+HGETALL school:1 // Confirm the entire document has been deleted
 ```
+
+<br>
 
 ### Indexing your data
 The Redis keyspace is unstructured and flat; by default, you can only access data by its primary key (keyname) making it very difficult to find a document based on a secondary characteristic, for example finding a school by name or listing all schools in a particular city. Redis Stack addresses this need by providing a possibility to index and query your data. 
@@ -87,42 +88,47 @@ FT.CREATE idx:schools
     "address_city" AS city TAG SORTABLE    
 ```
 
-In the query above we specify that we want to create an index named `idx:schools` that will index all keys of type `HASH` with a prefix of `school:`. The engine will index the fields `name`, `students` and `city`, making it possible to search on them. After we create the index, the indexing will happen automatically and synchronously every time we create or modify a hash with the specified prefix, but also the engine will retroactively index all existing documents in the database that match the specified criteria.
+In the query above we specify that we want to create an index named `idx:schools` that will index all keys of type `HASH` with a prefix of `school:`. The engine will index the fields `name`, `students` and `city`, making it possible to search on them. After we create the index, the indexing will happen automatically and synchronously every time we create or modify a hash with the specified prefix, but the engine will also retroactively index all existing documents in the database that match the specified criteria.
 
-Let's expand this simple example to our use case.
+Let's expand this simple example to our use case:
 ```redis Create a hash index
-// Command to create an index on hash keys that are prefixed with "school:"
+// Create an index on hash keys prefixed with "school:"
 // Note that it is possible to index either every hash or every JSON document in the keyspace or configure indexing only for a subset of the same data type documents described by a prefix.
 
 FT.CREATE idx:schools           // Index name
-  ON HASH                   // Indicates the type of data to index
-    PREFIX 1 "school:"      // Tells the index which keys it should index
+  ON HASH                       // Indicates the type of data to index
+    PREFIX 1 "school:"          // Tells the index which keys it should index
   SCHEMA
-    name TEXT NOSTEM SORTABLE    // Will be indexed as a TEXT field. Will permit sorting during query. Stemming is disabled, which is ideal for proper names.
+    name TEXT NOSTEM SORTABLE   // Will be indexed as a sortable TEXT field. Stemming is disabled, which is ideal for proper names.
     description TEXT
-    class TAG // Will be indexed as a TAG field. Will allow exact-match queries.
-    type TAG SEPARATOR ";"    // For tag fields, a separator indicates how the text contained in the field is to be split into individual tags
+    class TAG                   // Will be indexed as a TAG field. Will allow exact-match queries.
+    type TAG SEPARATOR ";"      // For tag fields, a separator indicates how the text contained in the field is to be split into individual tags
     address_city AS city TAG
     address_street AS address TEXT NOSTEM    // 'address_street' field will be indexed as TEXT, without stemming and can be referred to as 'street' due to the '... AS fieldname ...' construct.
     students NUMERIC SORTABLE   // Will be indexed as a numeric field. Will permit sorting during query
-    location GEO     // Will be indexed as GEO. Will allow geographic range queries
+    location GEO                // Will be indexed as GEO. Will allow geographic range queries
 ```
 
+
+<br>
 
 
 You can get some additional data about your indices with the `FT.LIST` and `FT.INFO` commands:
 ```redis Additional index information
-// Return a list of all indices
-FT._LIST
+FT._LIST // Return a list of all indices
 
-// Display information about a particular index
-FT.INFO "idx:schools"
+FT.INFO "idx:schools" // Display information about a particular index
 
 ```
+
+<br>
+
 ### Search and Querying Basics
 Now that we instructed Redis Stack on how we want our data indexed we can run different kinds of queries. Let's look at some examples:
 
 #### Text search
+You can run full text search queries on any field you marked to be indexed as `TEXT`:
+
 ```redis Exact text search
 // Perform a text search on all text fields: query for documents in which the word 'nature' occurs
 
@@ -134,12 +140,16 @@ FT.SEARCH idx:schools "nature"
 FT.SEARCH idx:schools "nature" RETURN 2 name description
 ```
 
+<br>
+
 With Fuzzy search, we can search for words that are similar to the one we're querying for. The number of `%` indicates the allowed Levenshtein distance (number of different characters). So the query would "culture" would match on "cultural" too, because "culture" and "cultural" have a distance of two.
 ```redis Fuzzy text search
 // Perform a Fuzzy text search on all text fields: query for documents with words similar to 'culture' with a Levenshtein distance of 2. 
 
 FT.SEARCH idx:schools "%%culture%%" RETURN 2 name description
 ```
+
+<br>
 
 You can search on specific fields too:
 ```redis Field-specific text search
@@ -148,6 +158,9 @@ You can search on specific fields too:
 FT.SEARCH idx:schools "@description:innovative"
 
 ```
+
+<br>
+
 
 #### Numeric, tag and geo search
 Next, let's look at how we can query on numeric, tag and geo fields:
@@ -173,6 +186,8 @@ FT.SEARCH idx:schools "@city:{London}"
 // Search for all schools in a radius of 30km of a location with a longitude of 51.3 and latitude of 0.32
 FT.SEARCH idx:schools "@location:[51.3 0.32 30 km]"
 ```
+
+<br>
 
 #### Search with multiple parameters
 ```redis Multiple tags (OR) search
@@ -202,6 +217,8 @@ FT.SEARCH idx:schools "%%nature%% @location:[51.3 0.32 30 km]"
 
 ```
 
+<br>
+
 #### Aggregations
 Aggregations are a way to process the results of a search query, group, sort and transform them - and extract analytic insights from them. Much like aggregation queries in other databases and search engines, they can be used to create analytics reports, or perform Faceted Search style queries. 
 
@@ -221,6 +238,8 @@ FT.AGGREGATE idx:schools "*"
     GROUPBY 1 @class REDUCE AVG 1 students AS students_avg
     SORTBY 2 @students_avg Asc
 ```
+
+<br>
 
 `APPLY` performs a 1-to-1 transformation on one or more properties in each record. It either stores the result as a new property down the pipeline or replaces any property using this transformation. 
 ```redis Aggregation with the transformation of properties
