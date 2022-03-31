@@ -19,7 +19,7 @@ This document provides an overview of the Quick Guides structure, its elements a
 ## Structure
 Quick Guides allows you to render recursive objects, such as a file directory.
 
-In guides folder, we have `guides.json` and all necessary static files (markdowns, images, etc.)
+On the root level of guides folder, we have `guides.json` and all necessary static files (markdowns, images, etc.)
 
 The content of this area is generated based on Nodes specified inside `guides.json`.
 This JSON file is described as a simple [Object](https://javascript.info/object) (Hash map), where key is a **string** and value is a **Node** (`Record<string, Node>`). Each Node requires a `label`,`type` and a unique `id` (all available properties are described in the table below).
