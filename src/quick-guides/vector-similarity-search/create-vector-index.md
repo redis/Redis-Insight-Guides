@@ -17,11 +17,12 @@ FT.CREATE "idx1"  // Index name
         "name" TEXT                     // Product Name is indexed as text
         "price" NUMERIC                 // price is indexed as numeric
         "image_vector"  VECTOR FLAT     // For "image vector" create a Flat index. 
-            8                           // 8 index parameters follow
+            10                          // 10 index parameters follow
             "TYPE" "FLOAT32"            // only FLOAT32 is currently supported
             "DIM" 512                   // Each vector will have 512 dimensions
             "DISTANCE_METRIC" "COSINE"  // Other values could be "IP" "L2"
-            "INITIAL_CAP" 10            // Pre-Allocate memory for up to 10 vectors per shard
+            "INITIAL_CAP" 5            // Pre-Allocate memory for up to 5 vectors per shard
+            "BLOCK_SIZE" 1              
 ```
 ## HNSW index: 
 Use this type of index for Approximate Nearest Neighbor search. Best for speed.
