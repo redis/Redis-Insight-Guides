@@ -45,7 +45,7 @@ FT.SEARCH idx1 //FLAT index
 
 ```redis Hybrid Query on HNSW Index
 FT.SEARCH idx2 // HNSW index
-    "@price:[70 80]=>[TOP_K $K @image_vector $query_vector]"  
+    "@price:[70 80]=>[KNN $K @image_vector $query_vector]"  
     "PARAMS" "4" 
         K 2                 //Top 2 query (K = 2)
         "query_vector"      //query vector is the embedding corresponding to the first product previously loaded!
