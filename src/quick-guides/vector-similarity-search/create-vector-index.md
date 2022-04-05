@@ -21,7 +21,7 @@ FT.CREATE "idx1"  // Index name
             "TYPE" "FLOAT32"            // only FLOAT32 is currently supported
             "DIM" 512                   // Each vector will have 512 dimensions
             "DISTANCE_METRIC" "COSINE"  // Other values could be "IP" "L2"
-            "INITIAL_CAP" 5            // Pre-Allocate memory for up to 5 vectors per shard
+            "INITIAL_CAP" 5             // Pre-Allocate memory for up to 5 vectors per shard
             "BLOCK_SIZE" 1              
 ```
 ## HNSW index: 
@@ -38,9 +38,9 @@ FT.CREATE "idx2"  // Index name
             "TYPE" "FLOAT32"            // only FLOAT32 is currently supported
             "DIM" 512                   // Each vector will have 512 dimensions
             "DISTANCE_METRIC" "COSINE"  // Other values could be "IP" "L2"
-            "INITIAL_CAP" 10            // Pre-Allocate memory for up to 10 vectors
-            "M" 20                      // HNSW parameter controlling
-            "EF_CONSTRUCTION" 100       // HNSW parameter controlling 
+            "INITIAL_CAP" 5            // Pre-Allocate memory for up to 5 vectors
+            "M" 20                      // HNSW parameter 
+            "EF_CONSTRUCTION" 100       // HNSW parameter 
  ```
 
 ## NOTE on image embedding generation:
