@@ -22,7 +22,7 @@ FT.CREATE "idx1"  // Index name
             "DIM" 512                   // Each vector will have 512 dimensions
             "DISTANCE_METRIC" "COSINE"  // Other values could be "IP" "L2"
             "INITIAL_CAP" 5             // Pre-Allocate memory for up to 5 vectors per shard
-            "BLOCK_SIZE" 1              
+            "BLOCK_SIZE" 5              
 ```
 ## HNSW index: 
 Use this type of index for Approximate Nearest Neighbor search. Best for speed.
