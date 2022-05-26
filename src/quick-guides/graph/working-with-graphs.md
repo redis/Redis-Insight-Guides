@@ -48,7 +48,7 @@ GRAPH.QUERY movies "MATCH (a:Actor) RETURN COUNT(a)"
 And calculate the number of 'ACTED_IN' relationships in the graph.
 
 ```redis Count Relationships
-GRAPH.QUERY movies "MATCH ()-[r:]->() RETURN COUNT(r)"
+GRAPH.QUERY movies "MATCH ()-[r:ACTED_IN]->() RETURN COUNT(r)"
 ```
 Let's delete all 'ACTED_IN' relationships for Mark Hamill.
 
