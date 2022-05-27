@@ -1,5 +1,13 @@
 ### Create and delete a time series.
 
+First, let's delete the time series 'sensor1' if it exist
+
+```redis Delete
+EXPIRE sensor1 120 // Sets expiration of the time series to 120 seconds
+ 
+DEL sensor1 // Deletes the entire time series immediately
+```
+
 Let's create a new time series.
 
 ```redis Create
@@ -18,14 +26,6 @@ TS.INFO sensor1 // Returns information and statistics on sensor1
 TS.QUERYINDEX area_id=32 // Get all the time series matching with area_id=32
 ```
 
-Let's delete a time series.
-
-```redis Delete
-EXPIRE sensor1 120 // Sets expiration of the time series to 120 seconds
- 
-DEL sensor1 // Deletes the entire time series immediately
-```
-
 ### Manage data points
 
 You can append new samples to your time series. Note that if the series does not exist, it will be automatically created.
@@ -33,16 +33,19 @@ You can append new samples to your time series. Note that if the series does not
 ```redis Add
 TS.ADD // Adds a new data point
     sensor1 // Keyname for the time series
-    1626434637914 // Timestamp
+    1626434638000 // Timestamp
     26 // Value
  
 TS.MADD // Adds multiple data points to a time series
     sensor1 // Keyname for the first time series
-    1626435637914 // Timestamp
+    1626434639000 // Timestamp
     28 // Value
     sensor1 // Keyname for the second time series, which can be different
-    * // Timestamp
+    1626434640000 // Timestamp
     35 // Value
+    sensor1 // Keyname for the second time series, which can be different
+    1626434641000 // Timestamp
+    32 // Value
  
 TS.ADD 
     sensor1
@@ -63,14 +66,14 @@ You can also update an existing time series using the `TS.ALTER` command.
 ```redis Update a Time Series
 TS.ALTER // Updates existing data points
     sensor1 // Keyname for the timerseries
-    1626434637914 // Timestamp
+    1626434639000 // Timestamp
     26 // Value
 ```
 
 To delete samples, specify the interval (inclusive) between two timestamps for a given time series.
 
 ```redis Delete
-TS.DEL sensor1 1626434637914 1626434637964 // Deletes all the data points between two timestamps (inclusive)
+TS.DEL sensor1 1626434629000 1626434639000 // Deletes all the data points between two timestamps (inclusive)
  
-TS.DEL sensor1 1626435637914 1626435637914 // To delete a single timestamp, use it as both the "from" and "to" timestamp
+TS.DEL sensor1 1626434639000 1626434639000 // To delete a single timestamp, use it as both the "from" and "to" timestamp
 ```
