@@ -61,13 +61,14 @@ TS.GET sensor1 // Gets the last sample in the time series
 TS.MGET FILTER area_id=32 // Returns the last sample from a time series with area_id=32
 ```
 
-You can also update an existing time series using the `TS.ALTER` command.
+You can also update an existing time series using the `TS.ADD` command.
 
 ```redis Update a Time Series
-TS.ALTER // Updates existing data points
-    sensor1 // Keyname for the timerseries
-    1626434639000 // Timestamp
-    26 // Value
+TS.ADD // Updates existing data points
+    sensor1 // Keyname for the time series you would like to update
+    1626434639000 // Existing timestamp
+    26 // New value
+    ON_DUPLICATE LAST // Override existing value with the new one
 ```
 
 To delete samples, specify the interval (inclusive) between two timestamps for a given time series.
