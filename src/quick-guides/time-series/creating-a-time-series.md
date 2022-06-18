@@ -64,7 +64,7 @@ TS.MGET FILTER area_id=32 // Returns the last sample from a time series with are
 You can also update an existing time series using the `TS.ADD` command.
 
 ```redis Update a Time Series
-TS.ADD // Updates existing data points
+TS.ADD // Using TS.ADD to update an existing sample
     sensor1 // Keyname for the time series you would like to update
     1626434639000 // Existing timestamp
     26 // New value
