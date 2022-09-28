@@ -98,7 +98,10 @@ or relative path to image inside the guides folder
 
 #### Redis Code block
 ![Redis Code block](docs/guides-redis-code-block.png)
-A button that inserts Redis code into the Code Editor. The syntax is almost the same as for [Fenced Code Block](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks), the only difference is that you must specify `redis` as language and the label next to it (`Create` in the example below).
+
+###### Manual-execute button
+A button that inserts Redis code into the Code Editor. The syntax is almost the same as for [Fenced Code Block](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks), 
+the only difference is that you must specify `redis` as language and the label next to it (`Create` in the example below).
 ````
  ```redis Create
     // Let's add three documents as Hashes.
@@ -112,6 +115,27 @@ A button that inserts Redis code into the Code Editor. The syntax is almost the 
 
  ```
 ````
+
+###### Auto-execute button
+![img.png](docs/guides-redis-auto-code-block.png)
+
+A button that automatically executes Redis code. It will be displayed with "play" icon inside.
+Code syntax is the same as for Manual-execute button, except language name - `redis-auto`
+````
+ ```redis-auto Create
+    // Let's add three documents as Hashes.
+    // Each document represents a building permit.
+
+    HSET permit:1 "description" "To reconstruct a single detached house with a front covered veranda." "construction_value" 42000 "building_type" "single detached house" "address_city" "Lisbon" "work_type" "demolition,reconstruction" "permit_timestamp" "1602156878" "address_street" "R. Da Palma" "location" "38.717746, -9.135839"
+
+    HSET permit:2 "description" "To construct a loft" "construction_value" 53000 "building_type" "apartment" "address_city" "Porto" "work_type" "construction" "permit_timestamp" "1556546400" "address_street" "Rua da Boavista" "location" "41.155854, -8.616721"
+
+    HSET permit:3 "description" "New house build" "construction_value" 260000 "building_type" "house" "address_city" "Lagos" "work_type" "construction;design" "permit_timestamp" "1612947600" "address_street" "R. Antonio Gedeao" "location" "37.114864, -8.668521"
+
+ ```
+````
+
+
 ## Autoupdate
 Our application supports the ability to quickly update the static files of the Enablement area so that we can provide users with up-to-date information.
 
