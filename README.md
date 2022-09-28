@@ -100,7 +100,7 @@ or relative path to image inside the guides folder
 ![Redis Code block](docs/guides-redis-code-block.png)
 
 ###### Manual-execute button
-A button that inserts Redis code into the Code Editor. The syntax is almost the same as for [Fenced Code Block](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks), 
+A button that inserts Redis commands in the Editor. The syntax is almost the same as for the [Fenced Code Block](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks), 
 the only difference is that you must specify `redis` as language and the label next to it (`Create` in the example below).
 ````
  ```redis Create
@@ -119,8 +119,9 @@ the only difference is that you must specify `redis` as language and the label n
 ###### Auto-execute button
 ![img.png](docs/guides-redis-auto-code-block.png)
 
-A button that automatically executes Redis code. It will be displayed with "play" icon inside.
-Code syntax is the same as for Manual-execute button, except language name - `redis-auto`
+A button that automatically executes the Redis commands (without inserting it into the Editor). Such buttons will be displayed with the "Play" icon inside.
+The code syntax is the same as for the manually executed buttons, just indicate the `redis-auto` (instead of `redis`) before the button.
+
 ````
  ```redis-auto Create
     // Let's add three documents as Hashes.
