@@ -32,13 +32,13 @@ Cuckoo filters support deletion of items. Let's delete an item from our filter.
 CF.DEL cuckoo bar // delete the “bar” item once from the filter
 CF.DEL cuckoo baz // if the item was added multiple times, it will still be present
 
+```
+
 You also can see the number of times an item may be in the filter.
 Note that because this is a probabilistic data structure, the count may not necessarily be accurate.
 
-```
 ```redis Count Items
 CF.COUNT cuckoo baz
-
 
 ```
 
