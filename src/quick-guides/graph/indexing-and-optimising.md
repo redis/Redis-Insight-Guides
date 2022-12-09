@@ -49,6 +49,6 @@ We will now use this index to match actors that their name contains a given word
 ```redis MATCH by fuzzy property
 GRAPH.QUERY movies "CALL db.idx.fulltext.queryNodes('Actor', '%Mork%') YIELD node RETURN node.name"
 ```
-The avoe query uses a [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) of 1 to find Mark back.
+The above query uses a [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) of 1 to find Mark back.
 
 RedisGraph supports the [query syntax of RediSearch](https://oss.redis.com/redisearch/Query_Syntax/).
