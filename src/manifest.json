@@ -1,5 +1,5 @@
-{
-  "quick-guides": {
+[
+  {
     "type": "group",
     "id": "quick-guides",
     "label": "QUICK GUIDES",
@@ -7,16 +7,16 @@
       "withBorder": true,
       "initialIsOpen": true
     },
-    "children": {
-      "document": {
+    "children": [
+      {
         "type": "group",
         "id": "document",
         "label": "Document",
         "args": {
           "initialIsOpen": false
         },
-        "children": {
-          "introduction": {
+        "children": [
+          {
             "type": "internal-link",
             "id": "introduction",
             "label": "Introduction",
@@ -24,7 +24,7 @@
               "path": "/quick-guides/document/introduction.md"
             }
           },
-          "working-with-hashes": {
+          {
             "type": "internal-link",
             "id": "working-with-hashes",
             "label": "Working with Hashes",
@@ -32,7 +32,7 @@
               "path": "/quick-guides/document/working-with-hashes.md"
             }
           },
-          "working-with-json": {
+          {
             "type": "internal-link",
             "id": "working-with-json",
             "label": "Working with JSON",
@@ -40,7 +40,7 @@
               "path": "/quick-guides/document/working-with-json.md"
             }
           },
-          "learn-more": {
+          {
             "type": "internal-link",
             "id": "learn-more",
             "label": "Learn More",
@@ -48,9 +48,9 @@
               "path": "/quick-guides/document/learn-more.md"
             }
           }
-        }
+        ]
       },
-      "graph": {
+      {
         "type": "group",
         "id": "graph",
         "label": "Graph",
@@ -58,8 +58,8 @@
           "withBorder": true,
           "initialIsOpen": false
         },
-        "children": {
-          "introduction": {
+        "children": [
+          {
             "type": "internal-link",
             "id": "introduction",
             "label": "Introduction",
@@ -67,7 +67,7 @@
               "path": "/quick-guides/graph/introduction.md"
             }
           },
-          "working-with-graphs": {
+          {
             "type": "internal-link",
             "id": "working-with-graphs",
             "label": "Working with Graphs",
@@ -75,7 +75,7 @@
               "path": "/quick-guides/graph/working-with-graphs.md"
             }
           },
-          "indexing-and-optimising": {
+          {
             "type": "internal-link",
             "id": "indexing-and-optimising",
             "label": "Indexing and Optimising",
@@ -83,7 +83,7 @@
               "path": "/quick-guides/graph/indexing-and-optimising.md"
             }
           },
-          "learn-more": {
+          {
             "type": "internal-link",
             "id": "learn-more",
             "label": "Learn More",
@@ -91,9 +91,9 @@
               "path": "/quick-guides/graph/learn-more.md"
             }
           }
-        }
+        ]
       },
-      "time-series": {
+      {
         "type": "group",
         "id": "time-series",
         "label": "Time Series",
@@ -101,8 +101,8 @@
           "withBorder": true,
           "initialIsOpen": false
         },
-        "children": {
-          "introduction": {
+        "children": [
+          {
             "type": "internal-link",
             "id": "introduction",
             "label": "Introduction",
@@ -110,7 +110,7 @@
               "path": "/quick-guides/time-series/introduction.md"
             }
           },
-          "creating-a-time-series": {
+          {
             "type": "internal-link",
             "id": "creating-a-time-series",
             "label": "Creating a Time Series",
@@ -118,7 +118,7 @@
               "path": "/quick-guides/time-series/creating-a-time-series.md"
             }
           },
-          "compactions": {
+          {
             "type": "internal-link",
             "id": "compactions",
             "label": "Compactions",
@@ -126,7 +126,7 @@
               "path": "/quick-guides/time-series/compactions.md"
             }
           },
-          "filtering": {
+          {
             "type": "internal-link",
             "id": "filtering",
             "label": "Filtering",
@@ -134,7 +134,7 @@
               "path": "/quick-guides/time-series/filtering.md"
             }
           },
-          "aggregation": {
+          {
             "type": "internal-link",
             "id": "aggregation",
             "label": "Aggregation",
@@ -142,7 +142,7 @@
               "path": "/quick-guides/time-series/aggregation.md"
             }
           },
-          "learn-more": {
+          {
             "type": "internal-link",
             "id": "learn-more",
             "label": "Learn more",
@@ -150,17 +150,17 @@
               "path": "/quick-guides/time-series/learn-more.md"
             }
           }
-        }
+        ]
       },
-      "vector-similarity-search": {
+      {
         "type": "group",
         "id": "vector-similarity-search",
         "label": "Vector Similarity Search",
         "args": {
           "initialIsOpen": false
         },
-        "children": {
-          "introduction": {
+        "children": [
+          {
             "type": "internal-link",
             "id": "introduction",
             "label": "Introduction",
@@ -168,7 +168,7 @@
               "path": "/quick-guides/vector-similarity-search/introduction.md"
             }
           },
-          "creating-vector-indexes": {
+          {
             "type": "internal-link",
             "id": "creating-vector-indexes",
             "label": "Creating Vector Indexes",
@@ -176,7 +176,7 @@
               "path": "/quick-guides/vector-similarity-search/creating-vector-indexes.md"
             }
           },
-          "loading-vectors": {
+          {
             "type": "internal-link",
             "id": "loading-vectors",
             "label": "Loading Vectors",
@@ -184,7 +184,7 @@
               "path": "/quick-guides/vector-similarity-search/loading-vectors.md"
             }
           },
-          "querying-vectors": {
+          {
             "type": "internal-link",
             "id": "querying-vectors",
             "label": "Querying Vectors",
@@ -192,7 +192,7 @@
               "path": "/quick-guides/vector-similarity-search/querying-vectors.md"
             }
           },
-          "learn-more": {
+          {
             "type": "internal-link",
             "id": "learn-more",
             "label": "Learn More",
@@ -200,17 +200,17 @@
               "path": "/quick-guides/vector-similarity-search/learn-more.md"
             }
           }
-        }
+        ]
       },
-      "probabilistic-data-structures": {
+      {
         "type": "group",
         "id": "probabilistic-data-structures",
         "label": "Probabilistic Data Structures",
         "args": {
           "initialIsOpen": false
         },
-        "children": {
-          "introduction": {
+        "children": [
+          {
             "type": "internal-link",
             "id": "introduction",
             "label": "Introduction",
@@ -218,7 +218,7 @@
               "path": "/quick-guides/probabilistic-data-structures/introduction.md"
             }
           },
-          "bloom-filter": {
+          {
             "type": "internal-link",
             "id": "bloom-filter",
             "label": "Bloom Filter",
@@ -226,7 +226,7 @@
               "path": "/quick-guides/probabilistic-data-structures/bloom-filter.md"
             }
           },
-          "cuckoo-filter": {
+          {
             "type": "internal-link",
             "id": "cuckoo-filter",
             "label": "Cuckoo Filter",
@@ -234,7 +234,7 @@
               "path": "/quick-guides/probabilistic-data-structures/cuckoo-filter.md"
             }
           },
-          "count-min-sketch": {
+          {
             "type": "internal-link",
             "id": "count-min-sketch",
             "label": "Count-Min Sketch",
@@ -242,7 +242,7 @@
               "path": "/quick-guides/probabilistic-data-structures/count-min-sketch.md"
             }
           },
-          "top-k": {
+          {
             "type": "internal-link",
             "id": "top-k",
             "label": "Top-K",
@@ -250,7 +250,7 @@
               "path": "/quick-guides/probabilistic-data-structures/top-k.md"
             }
           },
-          "learn-more": {
+          {
             "type": "internal-link",
             "id": "learn-more",
             "label": "Learn More",
@@ -258,8 +258,8 @@
               "path": "/quick-guides/probabilistic-data-structures/learn-more.md"
             }
           }
-        }
+        ]
       }
-    }
+    ]
   }
-}
+]

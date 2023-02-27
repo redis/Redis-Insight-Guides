@@ -19,17 +19,17 @@ This document provides an overview of the Quick Guides structure, its elements a
 ## Structure
 Quick Guides allows you to render recursive objects, such as a file directory.
 
-On the root level of guides folder, we have `guides.json` and all necessary static files (markdowns, images, etc.)
+On the root level of guides folder, we have `manifest.json` and all necessary static files (markdowns, images, etc.)
 
-The content of this area is generated based on Nodes specified inside `guides.json`.
-This JSON file is described as a simple [Object](https://javascript.info/object) (Hash map), where key is a **string** and value is a **Node** (`Record<string, Node>`). Each Node requires a `label`,`type` and a unique `id` (all available properties are described in the table below).
+The content of this area is generated based on Nodes specified inside `manifest.json`.
+This JSON file is described as a simple [Array](https://javascript.info/array) of [Objects](https://javascript.info/object), where each array entry (Object) represents tree node. Each Node requires a `label`,`type` and a unique `id` (all available properties are described in the table below).
 
 | Prop                 | Type                                    | Description |
 | -------------------- | --------------------------------------- | ----------- |
 | id (**required**)    | string                                  |             |
 | type (**required**)  | "group", "internal-link", "code-button" |             |
 | label (**required**) | string                                  | Label that will be displayed on UI for Node |
-| children             | Record<string, Node>                    | Use only for "group" type |
+| children             | Node[]                             | Use only for "group" type |
 | args                 | Record<string, any>                     | A special set of parameters required by a certain type of node (each type has its own)             |
 
 A Node can be represented by various UI components and is specified by `type` prop. Supported types are listed below.
@@ -44,16 +44,16 @@ A Node can be represented by various UI components and is specified by `type` pr
 
 ### Example with "Document" group and two guides inside it
 ```json
-{
-  "document": {
+[
+  {
     "type": "group",
     "id": "document",
     "label": "Document",
     "args": {
       "initialIsOpen": true
     },
-    "children": {
-      "introduction": {
+    "children": [
+      {
         "type": "internal-link",
         "id": "introduction",
         "label": "Introduction",
@@ -61,7 +61,7 @@ A Node can be represented by various UI components and is specified by `type` pr
           "path": "/quick-guides/document/introduction.md"
         }
       },
-      "learn-more": {
+      {
         "type": "internal-link",
         "id": "learn-more",
         "label": "Learn More",
@@ -69,9 +69,9 @@ A Node can be represented by various UI components and is specified by `type` pr
           "path": "/quick-guides/document/learn-more.md"
         }
       }
-    }
+    ]
   }
-}
+]
 ```
 ## Pages
 By using **"internal-link"** node we can open some [Markdown Guides](https://www.markdownguide.org/) located in guides folder.
@@ -100,7 +100,7 @@ or relative path to image inside the guides folder
 ![Redis Code block](docs/guides-redis-code-block.png)
 
 ###### Manual-execute button
-A button that inserts Redis commands in the Editor. The syntax is almost the same as for the [Fenced Code Block](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks), 
+A button that inserts Redis commands in the Editor. The syntax is almost the same as for the [Fenced Code Block](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks),
 the only difference is that you must specify `redis` as language and the label next to it (`Create` in the example below).
 ````
  ```redis Create
@@ -205,23 +205,22 @@ guides
    > streams
      basics.md
      getting-data.md
- guides.json
+ manifest.json
 ```
-5. Add new nodes inside `guides.json`
+5. Add new nodes inside `manifest.json`
 ```json
-{
-  "quick-guides": {
+[
+  {
     "type": "group",
     "id": "quick-guides",
     "label": "QUICK GUIDES",
-    "children": {
-      "document": {"id": "document"...},
-      "streams": {
+    "children": [
+      {
         "type": "group",
         "id": "streams",
         "label": "Streams",
-        "children": {
-          "basics": {
+        "children": [
+          {
             "type": "internal-link",
             "id": "basics",
             "label": "Basics",
@@ -229,7 +228,7 @@ guides
               "path": "/quick-guides/streams/basics.md"
             }
           },
-          "get-data": {
+          {
             "type": "internal-link",
             "id": "getting-data",
             "label": "Get Data",
@@ -237,12 +236,11 @@ guides
               "path": "/quick-guides/streams/getting-data.md"
             }
           }
-        }
+        ]
       }
-    }
+    ]
   }
-}
-
+]
 ```
 > _**!Note.** Markdown file name should have the same value as  Node `id` to properly create pagination. _
 6. Fill markdowns with content.
