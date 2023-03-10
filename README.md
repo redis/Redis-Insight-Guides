@@ -18,7 +18,7 @@ This document provides an overview of the Quick Guides structure, its elements a
 ## Examples
 Download this example with Redis Stack Tutorials and upload the archive using the "Upload Tutorial" feature in Workbench so you can view and work with them in RedisInsight.
 
-[Redis Stack Tutorials.zip](https://github.com/RedisInsight/Guides/blob/main/files/Redis.Stack.Tutorials.zip)
+[Redis Stack Tutorials.zip](https://github.com/RedisInsight/Guides/raw/main/files/Redis.Stack.Tutorials.zip)
 
 To upload your own tutorials, specify a link or folder path to a .zip archive with your tutorials.
 
