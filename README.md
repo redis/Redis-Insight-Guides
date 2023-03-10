@@ -7,14 +7,23 @@ The content of the Quick Guides can be updated independently without a need to u
 
 This document provides an overview of the Quick Guides structure, its elements and contains instructions, recommendations, and best practices for updating the content of Quick Guides.
 
-
-
 ## Navigation
 
-1. [Structure](#Structure)
-2. [Pages](#Pages)
-3. [Autoupdate Flow](#Autoupdate)
-4. [Development Flow](#Development)
+1. [Examples](#Examples)
+2. [Structure](#Structure)
+3. [Pages](#Pages)
+4. [Autoupdate Flow](#Autoupdate)
+5. [Development Flow](#Development)
+
+## Examples
+Download this example with Redis Stack Tutorials and upload the archive using the "Upload Tutorial" feature in Workbench so you can view and work with them in RedisInsight.
+
+[Redis Stack Tutorials.zip](https://github.com/RedisInsight/Guides/files/Redis.Stack.Tutorials.zip)
+
+To upload your own tutorials, specify a link or folder path to a .zip archive with your tutorials.
+
+Below you can find information about the structure and logic for creating your own tutorials.
+
 
 ## Structure
 Quick Guides allows you to render recursive objects, such as a file directory.
@@ -286,5 +295,3 @@ XREVRANGE mystream + - COUNT 1
 ![guides-gif](docs/guides.gif)
 
 9. After that, just commit and push, and then create Pull Request to the main branch. (Release flow described in the [Autoupdate Flow](#Autoupdate) section).
-
-
