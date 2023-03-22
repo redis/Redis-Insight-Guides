@@ -31,7 +31,7 @@ Quick Guides allows you to render recursive objects, such as a file directory.
 On the root level of guides folder, we have `manifest.json` and all necessary static files (markdowns, images, etc.)
 
 The content of this area is generated based on Nodes specified inside `manifest.json`.
-This JSON file is described as a simple [Objects](https://javascript.info/object) which represents tree node and might hav children nodes inside. Each Node requires a `label`,`type` and a unique `id` (all available properties are described in the table below).
+This JSON file is described as a simple [Objects](https://javascript.info/object) which represents tree node and might have children nodes inside. Each Node requires a `label`,`type` and a unique `id` (all available properties are described in the table below).
 
 | Prop                 | Type                                    | Description |
 | -------------------- | --------------------------------------- | ----------- |
