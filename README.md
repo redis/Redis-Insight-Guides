@@ -31,7 +31,7 @@ Quick Guides allows you to render recursive objects, such as a file directory.
 On the root level of guides folder, we have `manifest.json` and all necessary static files (markdowns, images, etc.)
 
 The content of this area is generated based on Nodes specified inside `manifest.json`.
-This JSON file is described as a simple [Array](https://javascript.info/array) of [Objects](https://javascript.info/object), where each array entry (Object) represents tree node. Each Node requires a `label`,`type` and a unique `id` (all available properties are described in the table below).
+This JSON file is described as a simple [Objects](https://javascript.info/object) which represents tree node and might hav children nodes inside. Each Node requires a `label`,`type` and a unique `id` (all available properties are described in the table below).
 
 | Prop                 | Type                                    | Description |
 | -------------------- | --------------------------------------- | ----------- |
@@ -53,7 +53,6 @@ A Node can be represented by various UI components and is specified by `type` pr
 
 ### Example with "Document" group and two guides inside it
 ```json
-[
   {
     "type": "group",
     "id": "document",
@@ -80,7 +79,6 @@ A Node can be represented by various UI components and is specified by `type` pr
       }
     ]
   }
-]
 ```
 ## Pages
 By using **"internal-link"** node we can open some [Markdown Guides](https://www.markdownguide.org/) located in guides folder.
@@ -218,7 +216,6 @@ guides
 ```
 5. Add new nodes inside `manifest.json`
 ```json
-[
   {
     "type": "group",
     "id": "quick-guides",
@@ -249,7 +246,6 @@ guides
       }
     ]
   }
-]
 ```
 > _**!Note.** Markdown file name should have the same value as  Node `id` to properly create pagination. _
 6. Fill markdowns with content.
