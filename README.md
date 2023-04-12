@@ -109,13 +109,15 @@ These guides may contain the following elements:
 ### Images
 Basic Markdown syntax provides the ability to render images. ([Image Markdown Syntax](https://www.markdownguide.org/basic-syntax/#images-1))
 
-You can use the absolute path
+You can use a relative path to images inside the guides folder, using the following logic:
+
+- `./` means the current directory;
+- `../` means the parent of the current directory.
+
+For example:
+
 ```
-![RedisInsight Browser screenshot](https://github.com/RedisInsight/RedisInsight/blob/main/.github/redisinsight_browser.png)
-```
-or relative path to image inside the guides folder
-```
-![RedisInsight Browser screenshot](/_images/aggregations.png)
+![RedisInsight Browser screenshot](./_images/aggregations.png)
 ```
 
 #### Redis Code block
