@@ -1,6 +1,6 @@
 ### Using JSON for modelling data in Redis
 
-Reading and managing hashes is done through the `JSON.SET` and `JSON.GET` commands. In the rest of the guide we'll work with JSON documents with the following structure;
+Reading and managing JSON documents is done through the `JSON.SET` and `JSON.GET` commands. In the rest of the guide we'll work with JSON documents with the following structure;
 
 ```
 {	
