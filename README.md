@@ -31,23 +31,38 @@ Quick Guides allows you to render recursive objects, such as a file directory.
 On the root level of guides folder, we have `manifest.json` and all necessary static files (markdowns, images, etc.)
 
 The content of this area is generated based on Nodes specified inside `manifest.json`.
-This JSON file is described as a simple [Objects](https://javascript.info/object) which represents tree node and might have children nodes inside. Each Node requires a `label`,`type` and a unique `id` (all available properties are described in the table below).
+This JSON file is described as a simple [Objects](https://javascript.info/object) which represents tree node and might have children nodes inside.
 
-| Prop                 | Type                                    | Description |
-| -------------------- | --------------------------------------- | ----------- |
-| id (**required**)    | string                                  |             |
-| type (**required**)  | "group", "internal-link", "code-button" |             |
-| label (**required**) | string                                  | Label that will be displayed on UI for Node |
-| children             | Node[]                             | Use only for "group" type |
-| args                 | Record<string, any>                     | A special set of parameters required by a certain type of node (each type has its own)             |
+Manifest file should start with single Node and should have properties described 
+below (it will be displayed as type "group"):
+
+| Prop                    | Type                     | Description                                                                                                                   |
+|-------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| label (**required**)    | string                   | Label that will be displayed on UI for Node                                                                                   |
+| children (**required**) | Node[]                   | List of Nodes (nested groups or markdown files)                                                                               |
+| type                    | "group", "internal-link" | This field is **required** for default guides, for user guides no reason to specify anything - it will be override to "group" |
+| keywords                | string[]                 | Used for tags/labels                                                                                                          |
+| author                  | string                   | Author name                                                                                                                   |
+| URL                     | string                   | Link to repository/web-site                                                                                                   |
+| industry                | string[]                 | Tags to show relevant industry                                                                                                |
+| description             | string                   | Short description of tutorials                                                                                                |
+
+Each Node requires a `label`,`type` (all available properties are described in the table below).
+
+| Prop                 | Type                     | Description                                                                            |
+|----------------------|--------------------------|----------------------------------------------------------------------------------------|
+| id                   | string                   |                                                                                        |
+| type (**required**)  | "group", "internal-link" |                                                                                        |
+| label (**required**) | string                   | Label that will be displayed on UI for Node                                            |
+| children             | Node[]                   | Use only for "group" type                                                              |
+| args                 | Record<string, any>      | A special set of parameters required by a certain type of node (each type has its own) |
 
 A Node can be represented by various UI components and is specified by `type` prop. Supported types are listed below.
 
-| Type            	| Description                                                                         	| Args                                                                                                                                                                         	|
-|-----------------	|-------------------------------------------------------------------------------------	|--------------	|
-| **"internal-link"** 	| A link that opens a page inside the Enablement Area <br> (e.g. link to guide page).   | - "path" (required, string) - relative file path                                                                                                              |
-| **"code-button"**   	| A button that inserts content into the Code Editor. | - "path" (required, string) - relative file path                                                                                                                             	|
-| **"group"**         	| Grouping several nodes into one directory/folder. <br> Allows you to create nested lists | - "initialIsOpen" (boolean) - The group will start in the open state (default value - false)	|
+| Type            	     | Description                                                                          	   | Args                                                                                         |
+|-----------------------|------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| **"internal-link"** 	 | A link that opens a page inside the Enablement Area <br> (e.g. link to guide page).      | - "path" (required, string) - relative file path                                             |
+| **"group"**         	 | Grouping several nodes into one directory/folder. <br> Allows you to create nested lists | - "initialIsOpen" (boolean) - The group will start in the open state (default value - false) |
 
 > _**!Note.** All **"internal-link"** nodes located in the same **"group"** will be connected to each other. And using pagination (created dynamically) you can go directly from one page to another. Therefore, it is best to combine elements into groups related to the same topic._
 
@@ -94,13 +109,15 @@ These guides may contain the following elements:
 ### Images
 Basic Markdown syntax provides the ability to render images. ([Image Markdown Syntax](https://www.markdownguide.org/basic-syntax/#images-1))
 
-You can use the absolute path
+You can use a relative path to images inside the guides folder, using the following logic:
+
+- `./` means the current directory;
+- `../` means the parent of the current directory.
+
+For example:
+
 ```
-![RedisInsight Browser screenshot](https://github.com/RedisInsight/RedisInsight/blob/main/.github/redisinsight_browser.png)
-```
-or relative path to image inside the guides folder
-```
-![RedisInsight Browser screenshot](/_images/aggregations.png)
+![RedisInsight Browser screenshot](./_images/aggregations.png)
 ```
 
 #### Redis Code block
@@ -184,6 +201,8 @@ The code syntax is the same as for the manually executed buttons, just insert pa
 ````
 
 ## Autoupdate
+> _Works only with default guides_
+
 Our application supports the ability to quickly update the static files of the Enablement area so that we can provide users with up-to-date information.
 
 EA guides auto-update flow:
@@ -247,7 +266,6 @@ guides
     ]
   }
 ```
-> _**!Note.** Markdown file name should have the same value as  Node `id` to properly create pagination. _
 6. Fill markdowns with content.
 
 `basics.md`
