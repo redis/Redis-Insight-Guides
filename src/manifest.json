@@ -51,49 +51,6 @@
     },
     {
       "type": "group",
-      "id": "graph",
-      "label": "Graph",
-      "args": {
-        "withBorder": true,
-        "initialIsOpen": false
-      },
-      "children": [
-        {
-          "type": "internal-link",
-          "id": "introduction",
-          "label": "Introduction",
-          "args": {
-            "path": "/quick-guides/graph/introduction.md"
-          }
-        },
-        {
-          "type": "internal-link",
-          "id": "working-with-graphs",
-          "label": "Working with Graphs",
-          "args": {
-            "path": "/quick-guides/graph/working-with-graphs.md"
-          }
-        },
-        {
-          "type": "internal-link",
-          "id": "indexing-and-optimising",
-          "label": "Indexing and Optimising",
-          "args": {
-            "path": "/quick-guides/graph/indexing-and-optimising.md"
-          }
-        },
-        {
-          "type": "internal-link",
-          "id": "learn-more",
-          "label": "Learn More",
-          "args": {
-            "path": "/quick-guides/graph/learn-more.md"
-          }
-        }
-      ]
-    },
-    {
-      "type": "group",
       "id": "time-series",
       "label": "Time Series",
       "args": {
