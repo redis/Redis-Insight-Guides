@@ -10,7 +10,7 @@ Common examples of **Triggers and Functions**:
 **You will need:**
 
 [Redis Stack Server](https://redis.io/download) >= 7.2.0-RC2 \
-OR \ 
+OR 
 [RedisGears 2]() >=2.0 \
 OR \
 A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions).

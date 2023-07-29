@@ -215,6 +215,49 @@
           }
         }
       ]
-    }
-  ]
+    },
+    {
+      "type": "group",
+      "id": "triggers-and-functions",
+      "label": "Triggers and Functions",
+      "args": {
+        "initialIsOpen": false
+      },
+      "children": [
+        {
+          "type": "internal-link",
+          "id": "introduction",
+          "label": "Introduction",
+          "args": {
+            "path": "/qiuck-guides/triggers-and-functions/introduction.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "loading-a-library",
+          "label": "Loading a library",
+          "args": {
+            "path": "/qiuck-guides/triggers-and-functions/loading-a-library.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "keyspace-triggers",
+          "label": "KeySpace Triggers",
+          "args": {
+            "path": "/qiuck-guides/triggers-and-functions/keyspace-triggers.md"
+          }
+        },
+        {
+          "type": "internal-link",
+          "id": "learn-more",
+          "label": "Learn more",
+          "args": {
+            "path": "/qiuck-guides/triggers-and-functions/learn-more.md"
+          }
+        }
+      }
+    ]
+  }
+]
 }

@@ -3,6 +3,7 @@
 
 ### Blogs
 * [Expanding the Database Triggers Features in Redis](https://redis.com/blog/database-trigger-features/)
+* [Triggers and Functions Preview]()
 
 ### Tutorials
 * [Examples](https://redis.io/docs/interact/programmability/triggers-and-functions/examples)
