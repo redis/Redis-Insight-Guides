@@ -1,4 +1,6 @@
-When creating a new library we add the code using the `TFUNCTION LOAD` command. The code needs to contain a prologue where we define which engine is used, the name of the library, and the minimum API version to use.
+When creating a new library we add the code using the `TFUNCTION LOAD` command.
+
+The code needs to contain a prologue where we define which engine is used, the name of the library, and the minimum API version to use.
 
 ```redis Upload library
 TFUNCTION LOAD 
