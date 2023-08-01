@@ -229,7 +229,7 @@
           "id": "introduction",
           "label": "Introduction",
           "args": {
-            "path": "/qiuck-guides/triggers-and-functions/introduction.md"
+            "path": "/quick-guides/triggers-and-functions/introduction.md"
           }
         },
         {
@@ -237,7 +237,7 @@
           "id": "loading-a-library",
           "label": "Loading a library",
           "args": {
-            "path": "/qiuck-guides/triggers-and-functions/loading-a-library.md"
+            "path": "/quick-guides/triggers-and-functions/loading-a-library.md"
           }
         },
         {
@@ -245,7 +245,7 @@
           "id": "keyspace-triggers",
           "label": "KeySpace Triggers",
           "args": {
-            "path": "/qiuck-guides/triggers-and-functions/keyspace-triggers.md"
+            "path": "/quick-guides/triggers-and-functions/keyspace-triggers.md"
           }
         },
         {
@@ -253,7 +253,7 @@
           "id": "learn-more",
           "label": "Learn more",
           "args": {
-            "path": "/qiuck-guides/triggers-and-functions/learn-more.md"
+            "path": "/quick-guides/triggers-and-functions/learn-more.md"
           }
         }
       ]
