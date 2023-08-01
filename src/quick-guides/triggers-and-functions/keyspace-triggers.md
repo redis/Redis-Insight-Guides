@@ -1,4 +1,4 @@
-Functions can react to events within Redis with key space triggers. Most of the events are triggered by command invocation but includes also events for when a key is expired or evicted from the database.
+Functions within Redis can respond to events using key space triggers. While the majority of these events are initiated by command invocations, they also include events that occur when a key expires or is removed from the database.
 
 For the full list of supported events, please refer to the [Redis Key Space notifications page](https://redis.io/docs/manual/keyspace-notifications/#events-generated-by-different-commands).
 
@@ -18,7 +18,7 @@ TFUNCTION LOAD REPLACE "#!js name=myFirstLibrary api_version=1.0\n
     redis.registerKeySpaceTrigger('addLastUpdated', 'fellowship:', addLastUpdatedField);" // Register the KeySpaceTrigger 'AddLastUpdated' for keys with the prefix 'fellowship' with a callback to the function 'addLastUpdatedField'
 ```
 
-Add a new hash to.
+Add a new hash.
 
 ```redis Set an example
 HSET fellowship:1 

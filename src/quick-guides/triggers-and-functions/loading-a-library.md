@@ -1,4 +1,4 @@
-When creating a new library we add the code to the command. The code need to contain a prologue where we define which engine is used, the name of the library and the minimum API version to use.
+When creating a new library we add the code using the `TFUNCTION LOAD` command. The code needs to contain a prologue where we define which engine is used, the name of the library, and the minimum API version to use.
 
 ```redis Upload library
 TFUNCTION LOAD 
@@ -23,7 +23,7 @@ TFCALL // TFCALL for running sync functions, FCALLASYNC for async
 ```
 
 We can give arguments when we are executing the command.
-To update the library, add the replace argument.
+To update the library, add `REPLACE` to the `LOAD` command.
 
 ```redis Replace the library
 TFUNCTION LOAD REPLACE // The replace flag is added when the library already exist
@@ -33,7 +33,7 @@ TFUNCTION LOAD REPLACE // The replace flag is added when the library already exi
     });"
 ```
 
-Now run the command with an additional argument
+Now run the command with an additional argument.
 
 ```redis Execute function
 TFCALL
