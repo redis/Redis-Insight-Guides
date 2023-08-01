@@ -18,7 +18,7 @@ TFUNCTION LOAD REPLACE "#!js name=myFirstLibrary api_version=1.0\n
     redis.registerKeySpaceTrigger('addLastUpdated', 'fellowship:', addLastUpdatedField);" // Register the KeySpaceTrigger 'AddLastUpdated' for keys with the prefix 'fellowship' with a callback to the function 'addLastUpdatedField'
 ```
 
-Add a new hash.
+Add a new hash with the required prefix to trigger our function.
 
 ```redis Set an example
 HSET fellowship:1 
