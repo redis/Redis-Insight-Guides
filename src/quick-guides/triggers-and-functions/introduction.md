@@ -4,7 +4,7 @@ To use Triggers and Functions, you need to write functions that describe how the
 
 Common examples of **Triggers and Functions**:
 
-* Automatic Expire.
+* Automatic Expire
 * Enrich and transform data.
 * Batch operations
 
