@@ -13,6 +13,6 @@ Common examples of **Triggers and Functions**:
 
 [Redis Stack Server](https://redis.io/download/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions_guide) >= 7.2.0-RC2 \
 OR \
-[Triggers and Functions](https://redis.io/docs/interact/programmability/triggers-and-functions) >=2.0 \
+[Triggers and Functions](https://redis.io/docs/interact/programmability/triggers-and-functions/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions_guide) >=2.0 \
 OR \
 A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_triggers_and_functions_guide).
