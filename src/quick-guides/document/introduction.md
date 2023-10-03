@@ -17,7 +17,7 @@ In the rest of this guide we'll show how you can automatically index your data, 
 OR \
 [RediSearch](https://oss.redis.com/redisearch/) >=2.0 and [RedisJSON](https://oss.redis.com/redisjson/) >=2.0 \
 OR \
-A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_doc_guide).
+A free Redis Stack instance on [Redis Cloud](https://redis.com/try-free/?utm_source=redis\&utm_medium=app\&utm_campaign=redisinsight_doc_guide "Redis Cloud").
 
 
 
