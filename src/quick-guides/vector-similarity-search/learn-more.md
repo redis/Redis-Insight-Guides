@@ -1,5 +1,5 @@
 ### Documentation
-* [RediSearch](https://redis.io/docs/stack/search/)
+* [RediSearch](https://redis.io/docs/interact/search-and-query/)
 * [Vectors](https://redis.io/docs/interact/search-and-query/advanced-concepts/vectors/)
 
 ### Blogs
