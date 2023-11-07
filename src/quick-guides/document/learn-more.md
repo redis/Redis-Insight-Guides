@@ -1,6 +1,6 @@
 ### Documentation
 * [Hashes](https://redis.io/docs/data-types/#hashes)
-* [RediSearch](https://redis.io/docs/interact/search-and-query/
+* [RediSearch](https://redis.io/docs/interact/search-and-query/)
 * [RedisJSON](https://redis.io/docs/data-types/json/)
 
 ### Blogs
