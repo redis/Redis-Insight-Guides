@@ -16,9 +16,9 @@ This document provides an overview of the Quick Guides structure, its elements a
 5. [Development Flow](#Development)
 
 ## Examples
-Download this example with Redis Stack Tutorials and upload the archive using the "Upload Tutorial" feature in Workbench so you can view and work with them in RedisInsight.
+Download this example with Redis Stack Tutorials and upload the archive using the "Upload Tutorial" feature in Workbench so you can view and work with them in Redis Insight.
 
-[Redis Stack Tutorials.zip](https://github.com/RedisInsight/Guides/raw/main/files/Redis.Stack.Tutorials.zip)
+[Redis Stack Tutorials.zip](https://github.com/Redis-Insight/Guides/raw/main/files/Redis.Stack.Tutorials.zip)
 
 To upload your own tutorials, specify a link or folder path to a .zip archive with your tutorials.
 
@@ -143,7 +143,7 @@ the only difference is that you must specify `redis` as language and the label n
 ###### Button parameters
 
 You can customize the run parameters to configure the raw mode, pipeline parameter and group mode. If specified, they will override
-the configuration set in RedisInsight. If not specified - the behaviour will be defined by parameters set in RedisInsight.
+the configuration set in Redis Insight. If not specified - the behaviour will be defined by parameters set in Redis Insight.
 To specify the parameters, insert them after the `redis-auto:` and add the parameters in square brackets separated with a semicolon (`;`) in
 the following way:
 
@@ -208,7 +208,7 @@ Our application supports the ability to quickly update the static files of the E
 EA guides auto-update flow:
 1. Push commit with updates to `/guides` repository branch
 2. Approve guides release in CircleCI.
-3. Reopen the Redisinsight with a working internet connection. In the background, new files will be downloaded to the user's local home directory:
+3. Reopen the Redis Insight with a working internet connection. In the background, new files will be downloaded to the user's local home directory:
     * **Mac**: In the `/Users/<your-username>/.redisinsight-v2/guides` directory.
     * **Windows**: In the `C:\Users\<your-username>\.redisinsight-v2\guides` directory.
     * **Linux**: In the `/home/<your-username>/.redisinsight-v2/guides` directory.
@@ -301,7 +301,7 @@ XREVRANGE mystream + - COUNT 1
 
 
 ````
-7. Open **RedisInsight** application with `GUIDES_DEV_PATH` environment variable `GUIDES_DEV_PATH='<path to Guides repo>/src' ./<path to RedisInsight binary>`
+7. Open **Redis Insight** application with `GUIDES_DEV_PATH` environment variable GUIDES_DEV_PATH='<path to Guides repo>/src>' ./<path to Redis Insight binary>
 
    Example on Linux: `GUIDES_DEV_PATH='/home/user/projects/Guides/src' ./home/user/programms/RedisInsight.AppImage`
 8. Make sure that everything looks fine.
