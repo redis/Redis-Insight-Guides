@@ -1,3 +1,7 @@
+[!CAUTION]
+> **Redis Insight Guides are no longer actively maintained or supported.**
+> Check our [tutorials](https://github.com/RedisInsight/Tutorials) to find helpful use cases, comments, and related demonstrations of Redis features to help you level up your Redis game.
+
 ## Introduction
 ![Quick Guides UI](docs/guides.png)
 
